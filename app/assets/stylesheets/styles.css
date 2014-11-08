@@ -1,0 +1,26 @@
+
+#logo {
+	background-color: pink;	
+}
+
+nav {
+	background-color: violet;
+}
+
+
+.product-box {
+	margin: 20px;
+	padding: 5px;
+	border: 1pt solid black;
+}
+
+
+.centered-form {
+	
+}
+
+
+footer {
+	background-color: grey;
+	height: 50px;
+}
