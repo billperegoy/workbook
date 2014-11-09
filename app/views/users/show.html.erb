@@ -1,0 +1,8 @@
+<h1>User Details</h1>
+<h3>Name: <%= @user.username %></h3>
+<h3>Hashed password: <%= @user.hashed_password %></h3>
+<h3>Email: <%= @user.email %></h3>
+<h3>Role: <%= @user.role %></h3>
+
+<p><%= link_to "edit this user", edit_user_path %></p>
+<p><%= link_to "back to user list", users_path %></p>
