@@ -1,20 +1,19 @@
 <h1>All Books</h1>
 
   <main>
-		<div class="container">	
+    <div class="container">	
 
-      <% @books.each do |book| %>
-      <!-- <div class="row"> -->
-	  	  <div class="col-md-3">
-		  	<div class="product-box"><%= image_tag book.thumbnail %>
-		  	<caption class ="product-name"><%= link_to book.title, book %></caption>			  	
-        </div><!-- end product box-->
-        </div><!-- end col-md-3 -->
-      <!-- </div><!-- end row--> 
-    
-  <% end %>
-
-    </div><!-- end container-->
+      <% @books.in_groups_of(4) do |row| %>
+        <div class="row">
+          <% row.each do |book| %>
+            <div class="col-md-3">
+              <div class="product-box"><%= image_tag book.thumbnail %>
+                <caption class ="product-name"><%= link_to book.title, book %></caption>
+              </div><!-- end product box-->
+            </div><!-- end col-md-3 -->
+          <% end %>
+        </div> <!-- end row -->
+      <% end %>
   </main>
 
 
