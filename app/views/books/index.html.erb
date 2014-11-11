@@ -1,9 +1,31 @@
 <h1>All Books</h1>
 
-<ul>
-  <% @books.each do |book| %>
-    <li><%=  link_to book.title, book %>
+  <main>
+		<div class="container">	
+
+      <% @books.each do |book| %>
+      <!-- <div class="row"> -->
+	  	  <div class="col-md-3">
+		  	<div class="product-box"><%= image_tag book.thumbnail %>
+		  	<caption class ="product-name"><%= link_to book.title, book %></caption>			  	
+        </div><!-- end product box-->
+        </div><!-- end col-md-3 -->
+      <!-- </div><!-- end row--> 
+    
   <% end %>
-</ul>
+
+    </div><!-- end container-->
+  </main>
+
+
+
+
+
+
+
+
 <p> <%= link_to "Create new book", new_book_path %> </p>
+
+
+
 
