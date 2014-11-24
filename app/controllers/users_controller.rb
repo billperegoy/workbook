@@ -33,9 +33,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+    user = User.find_by_username(params[:username])
+    if user && authenticate(params[:password])
+      session[:user_id] = user_id
+      #redirect_to root_path, :notice "Logged in as #{user.username}"
+    else
+      render :login
+    end
+  end
+
   private
   def user_params
-    params.require(:user).permit(:username, :hashed_password, :email, :role)
+    params.require(:user).permit(:username, :password, :password_confirmation, :email, :role)
   end
 
 end

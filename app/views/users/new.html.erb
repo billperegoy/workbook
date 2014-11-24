@@ -1,4 +1,4 @@
-<h1>Editing User <%= @user.username %></h1>
+<h1>Create New User</h1>
 
 
 <%= form_for(@user) do |f| %>
@@ -7,8 +7,12 @@
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :hashed_password %><br/>
-    <%= f.text_field :hashed_password %>
+    <%= f.label :password %><br/>
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br/>
+    <%= f.text_field :password_confirmation %>
   </p>
   <p>
     <%= f.label :email %><br/>
