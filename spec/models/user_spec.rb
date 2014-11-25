@@ -5,8 +5,8 @@ describe User do
     @user = User.new(username: "sheep",
                      email: "sheep@sheep.com",
                      role: 'user',
-                     password: "foo",
-                     password_confirmation: "foo")
+                     password: "neatmeat",
+                     password_confirmation: "neatmeat")
   end
 
   it "should fail validate if username is blank" do
@@ -33,6 +33,12 @@ describe User do
     expect(@user.valid?).to eq(false)
   end
 
+  it "should fail if username is not unique" do
+    @user.save!
+    @dup_user = @user.dup
+    expect(@dup_user.valid?).to eq(false)
+  end
+
   it "should fail validate if email is blank" do
     @user.email = ''
     expect(@user.valid?).to eq(false)
@@ -53,5 +59,15 @@ describe User do
     expect(@user.valid?).to eq(false)
   end
 
+  it "should fail if password and confirmation do not match" do
+    @user.password_confirmation = "meatmeat"
+    expect(@user.valid?).to eq(false)
+  end
+
+  it "should fail if password is less than 8 characters" do
+    @user.password = "meatmea"
+    @user.password_confirmation = "meatmea"
+    expect(@user.valid?).to eq(false)
+  end
 
 end
