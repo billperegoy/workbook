@@ -1,0 +1,43 @@
+$greenblue: #52c4ba;
+
+
+
+
+#logo {
+	background-color: $greenblue;	
+}
+
+nav {
+	background-color: violet;
+}
+
+
+.product-box {
+	margin: 20px;
+	padding: 5px;
+	border: 1pt solid black;
+}
+
+
+.product-image {
+  width: 210px;
+}
+
+.product-name {
+  font-size: 1.143em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #52c4ba;
+  font-family: georgia;
+}
+
+.product-name a {
+  color: white;
+  background-color: #52c4ba;
+}
+
+
+footer {
+	background-color: grey;
+	height: 50px;
+}

@@ -7,8 +7,9 @@
         <div class="row">
           <% row.each do |book| %>
             <div class="col-md-3">
-              <div class="product-box"><%= image_tag book.thumbnail %>
-                <caption class ="product-name"><%= link_to book.title, book %></caption>
+              <div class="product-box">
+                  <%= image_tag book.thumbnail, :class => "img-responsive product-image" %>
+                <caption><%= link_to book.title, book, :class => "product-name"  %></caption>
               </div><!-- end product box-->
             </div><!-- end col-md-3 -->
           <% end %>
