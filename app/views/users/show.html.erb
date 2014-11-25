@@ -1,4 +1,11 @@
 <h1>User Details</h1>
+
+<% if logged_in? %>
+  <p>User <%= current_username %> logged in</p>
+<% else %>
+  <p>This user is not logged in <p>
+<% end %>
+
 <h3>Name: <%= @user.username %></h3>
 <h3>Hashed password: <%= @user.password_digest %></h3>
 <h3>Email: <%= @user.email %></h3>
