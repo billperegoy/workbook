@@ -33,14 +33,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
-    user = User.find_by_username(params[:username])
-    if user && authenticate(params[:password])
-      session[:user_id] = user_id
-      #redirect_to root_path, :notice "Logged in as #{user.username}"
-    else
-      render :login
-    end
+  def record_not_found
+    flash[:danger] = 'User not found'
+    redirect_to root_path
   end
 
   private

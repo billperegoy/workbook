@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "Viewing the list of users" do
   it "has proper page header" do
