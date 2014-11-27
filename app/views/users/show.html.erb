@@ -1,15 +1,8 @@
-<h1>User Details</h1>
-
-<% if logged_in? %>
-  <p>User <%= current_username %> logged in</p>
-<% else %>
-  <p>This user is not logged in <p>
+<h1>Workbook Dashboard for user <%= @user.username %></h1>
+<p>Books owned</p>
+<ul>
+<% @user.owned_books.each do |owned_book| %>
+  <li><%= owned_book.book.title %></li>
 <% end %>
-
-<h3>Name: <%= @user.username %></h3>
-<h3>Hashed password: <%= @user.password_digest %></h3>
-<h3>Email: <%= @user.email %></h3>
-<h3>Role: <%= @user.role %></h3>
-
-<p><%= link_to "edit this user", edit_user_path %></p>
-<p><%= link_to "back to user list", users_path %></p>
+</ul>
+<%= link_to "Add a book", store_items_path %>

@@ -18,4 +18,9 @@ class User < ActiveRecord::Base
                        length: { minimum: 8}
 
   has_secure_password
+  has_many :owned_books
+
+  def add_book(book)
+    owned_book = OwnedBook.create(book_id: book.id, user_id: id)
+  end
 end
