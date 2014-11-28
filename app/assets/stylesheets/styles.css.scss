@@ -23,38 +23,35 @@ $orange: #ff8500;
 //whole nav bar
 .navbar.navbar-default {
   background: none; 
-  border: none;
-  box-shadow: none;
-  
+  border: 1pt blue solid;
+  box-shadow: none; 
 }
 
 
 
 //center part of nav with content
 ul.nav.navbar-nav  {
-border: 1pt pink solid;
-float: none;
-  
+  border: 1pt pink solid;
 }
 
+
+
+//each menu item
 ul.nav.navbar-nav li {
 
-  text-align: center;
+
 }
 
 
-.navbar-bar .nav {
-  float: none;
-}
 
-
-//link text in nv
+//link text in nav
 ul.nav.navbar-nav li a{
   color: $brightblue;
   font-family: Arial "Tienne", Georgia;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.1em;
+
 }
 
 //active link in nav
@@ -65,6 +62,7 @@ ul.nav.navbar-nav li.active a {
   color: $brightpink;
 }
 
+//hover for active and non-active links in nav
 ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
   color: $orange;  
   background-image: none;

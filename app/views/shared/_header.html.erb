@@ -50,21 +50,23 @@
 
 
 <!--------------NAV------------------->
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">      
+<nav class="navbar navbar-default" role="navigation"> 
+
+<div class="container"> 
+      <div class="spacer col-md-3"></div> 
+       <div class="col-md-6 center-block">  
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">shop</a></li>
+              <li><a href="#">about</a></li>
+              <% if logged_in? %>
+                <li><a href="#">my dashboard</a></li>
+              <% end %>
+              <li><a href="#">contact</a></li>
+            </ul>     
+        </div>
+      </div>
       <div class="spacer col-md-3"></div>
-      <div class="col-md-6">  
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">shop</a></li>
-          <li><a href="#">about</a></li>
-          <% if logged_in? %>
-            <li><a href="#">my dashboard</a></li>
-          <% end %>
-          <li><a href="#">contact</a></li>
-        </ul>     
-      </div><!-- end col md 8--> 
-      <div class="spacer col-md-3"></div>
-  </div><!-- end container-fluid -->
+  </div>
 </nav>
 
 
