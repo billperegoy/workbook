@@ -55,12 +55,12 @@
       <div class="spacer col-md-3"></div>
       <div class="col-md-6">  
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">shop</a></li>
-          <li><a href="#">about</a></li>
+          <li><%= link_to "shop", store_items_path %></li>
+          <li><%= link_to "about", about_path %></li>
           <% if logged_in? %>
-            <li><a href="#">my dashboard</a></li>
+            <li><%= link_to "my dashboard", user_path(current_user) %></li>
           <% end %>
-          <li><a href="#">contact</a></li>
+          <li><%= link_to "contact", contact_path %></li
         </ul>     
       </div><!-- end col md 8--> 
       <div class="spacer col-md-3"></div>
