@@ -1,5 +1,4 @@
 <h1>My Dashboard</h1>
-<p>Books owned</p>
 <table class='table'>
 <% @user.owned_books.each do |owned_book| %>
   <tr>
@@ -16,9 +15,9 @@
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a role="menuitem" href="#">Edit</a></li>
-          <li><a role="menuitem" href="#">Print Tamplate</a></li>
-          <li><a role="menuitem" href="#">Print Work</a></li>
+          <li><a href="#">Edit Book</a></li>
+          <li><a href="#">Print Template</a></li>
+          <li><a href="#">Print Work</a></li>
         </ul>
       </div>
     </td>
