@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to @user, notice: "User successfully updated."
+      redirect_to @user, success: "User successfully updated."
     else
       render :edit
     end
@@ -27,15 +27,25 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save(user_params)
-      redirect_to @user, notice: "User successfully created."
+      redirect_to @user, success: "User successfully created."
     else
       render :new
     end
   end
 
+  def login
+    user = User.find_by_username(params[:username])
+    if user && authenticate(params[:password])
+      session[:user_id] = user_id
+      #redirect_to root_path, :notice "Logged in as #{user.username}"
+    else
+      render :login
+    end
+  end
+
   private
   def user_params
-    params.require(:user).permit(:username, :hashed_password, :email, :role)
+    params.require(:user).permit(:username, :password, :password_confirmation, :email, :role)
   end
 
 end
