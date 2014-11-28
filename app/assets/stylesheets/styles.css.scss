@@ -1,15 +1,87 @@
 $greenblue: #52c4ba;
+$gold: #F7941D;
+$dullpink: #D04D57;
+$brightpink: #DF0D79;
+$brightblue: #10B3BC;
+$grey: #888888;
+$orange: #ff8500;
 
 
 
 
 #logo {
-	background-color: $greenblue;	
+	text-align: center;
 }
 
-nav {
-	background-color: violet;
+#logo a:hover {
+  opacity: .5;
 }
+
+
+////////////////nav/////////////
+
+//whole nav bar
+.navbar.navbar-default {
+  background: none; 
+  border: none;
+  box-shadow: none;
+  
+}
+
+
+
+//center part of nav with content
+ul.nav.navbar-nav  {
+border: 1pt pink solid;
+float: none;
+  
+}
+
+ul.nav.navbar-nav li {
+
+  text-align: center;
+}
+
+
+.navbar-bar .nav {
+  float: none;
+}
+
+
+//link text in nv
+ul.nav.navbar-nav li a{
+  color: $brightblue;
+  font-family: Arial "Tienne", Georgia;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+//active link in nav
+ul.nav.navbar-nav li.active a {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: $brightpink;
+}
+
+ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
+  color: $orange;  
+  background-image: none;
+  background-color: transparent;
+  
+}
+
+
+// login area 
+
+
+
+.not-logged-in {
+  
+}
+
+
 
 
 .product-box {
