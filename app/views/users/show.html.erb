@@ -1,8 +1,28 @@
-<h1>Workbook Dashboard for user <%= @user.username %></h1>
+<h1>My Dashboard</h1>
 <p>Books owned</p>
-<ul>
+<table class='table'>
 <% @user.owned_books.each do |owned_book| %>
-  <li><%= owned_book.book.title %></li>
-<% end %>
-</ul>
+  <tr>
+    <td><%= owned_book.book.title %></td>
+    <td>
+      <div class="progress">
+        <div class="progress-bar" style="width: <%= owned_book.percent_complete %>;"><%= owned_book.percent_complete %></div>
+      </div>
+    </td>
+    <td>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown">
+          action 
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a role="menuitem" href="#">Edit</a></li>
+          <li><a role="menuitem" href="#">Print Tamplate</a></li>
+          <li><a role="menuitem" href="#">Print Work</a></li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+  <% end %>
+</table>
 <%= link_to "Add a book", store_items_path %>
