@@ -1,9 +1,72 @@
 <header>
-  <div class="container-fluid">
+
+<!-----------LOG IN AREA-------------->
+
+<div class="container-fluid">
     <div class="row">
-      <div class="col-xs-3" id="logo">LOGO</div>
-        <nav class="col-xs-9">NAV</div>
-      </div>
-    </div>
-  </div>
+      <div class="login-area-holder col-md-12">
+        
+        <div class="spacer col-md-10">
+        </div><!-- end spacer -->
+        
+        <div class="login-area col-md-2">
+                  
+        <% if logged_in? %>
+          <div class="logged-in">
+            <span>hello name</span>
+            <span>&nbsp;|&nbsp;</span>
+            <%= link_to "log out", logout_path %>
+          </div><!-- end logged in-->
+          
+        <% else %>
+          <div class="not-logged-in">
+            <a href="#">sign up</a>
+            <span>&nbsp;|&nbsp;</span>
+            <%= link_to "log in", login_path %>          
+            </div><!-- end not logged in -->
+        <% end %>          
+        
+        </p><!-- end login area-->
+
+      </div><!--end login-area-holder -->
+    </div><!-- end row -->
+</div><!-- end container --> 
+  
+<!--------------LOGO------------------->
+<div class="container-fluid">
+    <div class="row">
+      <div class="spacer col-md-3"></div>
+      <div id="logo" class="col-md-6 img-responsive">
+        <%= link_to image_tag("/assets/indieconomy-logo-600px.png"), root_path %> 
+          
+          
+         <!-- 
+          <img src="assets/indieconomy-logo-600px.png"  alt="Indieconomy Logo"></div>
+        -->  
+      <div class="spacer col-md-3"></div>
+    </div><!-- end row -->
+</div><!-- end container-->
+
+
+
+<!--------------NAV------------------->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">      
+      <div class="spacer col-md-3"></div>
+      <div class="col-md-6">  
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">shop</a></li>
+          <li><a href="#">about</a></li>
+          <% if logged_in? %>
+            <li><a href="#">my dashboard</a></li>
+          <% end %>
+          <li><a href="#">contact</a></li>
+        </ul>     
+      </div><!-- end col md 8--> 
+      <div class="spacer col-md-3"></div>
+  </div><!-- end container-fluid -->
+</nav>
+
+
+
 </header>
