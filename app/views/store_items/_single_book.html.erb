@@ -3,6 +3,8 @@
     <div class="product-box"><%= image_tag book.thumbnail %>
        <caption class ="product-name"><%= link_to book.title, book %></caption>
     </div>
-    <%= link_to "Buy Me", add_to_cart_path(book) %>
+    <% if logged_in? %>
+      <%= link_to "Buy Me", add_to_cart_path(book) %>
+    <% end %>
   </div>
 <% end %>

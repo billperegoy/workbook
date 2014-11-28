@@ -1,5 +1,5 @@
 Workbook::Application.routes.draw do
-  root 'books#index'
+  root 'store_items#index'
 
   resources :users
   resources :books

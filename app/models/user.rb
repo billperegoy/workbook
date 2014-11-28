@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
                        format: { with: VALID_USERNAME_REGEX },
                        length: { minimum: 4, maximum: 16 }
 
+  validates :name, presence: true,
+                   length: { maximum: 20 }
+
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX }
 
