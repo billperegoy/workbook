@@ -9,24 +9,27 @@ u7 = User.create(name: 'Linda Poophead', username: 'linda', password: 'password'
 
 
 Book.delete_all
-b1 = Book.create(title:  'Book 1', thumbnail: "286.jpg", description: "description", price: 100.00)
-b2 = Book.create(title:  'Book 2', thumbnail: "286.jpg", description: "description", price: 100.00)
-b3 = Book.create(title:  'Book 3', thumbnail: "286.jpg", description: "description", price: 100.00)
-b4 = Book.create(title:  'Book 4', thumbnail: "286.jpg", description: "description", price: 100.00)
-b5 = Book.create(title:  'Book 5', thumbnail: "286.jpg", description: "description", price: 100.00)
-b6 = Book.create(title:  'Book 6', thumbnail: "286.jpg", description: "description", price: 100.00)
-b7 = Book.create(title:  'Book 7', thumbnail: "286.jpg", description: "description", price: 100.00)
-b8 = Book.create(title:  'Book 8', thumbnail: "286.jpg", description: "description", price: 100.00)
-b9 = Book.create(title:  'Book 9', thumbnail: "286.jpg", description: "description", price: 100.00)
+b0 = Book.create(title: 'Know Your Brand', thumbnail: 'know-your-brand-class1-300x300.png', description: 'Know your brand class', price: 50.00)
+b1 = Book.create(title: 'Tagline Workshop', thumbnail: 'tagline-workbook-300x300.png', description: 'Tagline Workbook', price: 50.00)
+b2 = Book.create(title: '1 To 1', thumbnail: '1to1-300x300.png', description: '1 To 1', price: 50.00)
+b3 = Book.create(title: 'Learn Live', thumbnail: 'learn-live-300x300.png', description: 'Learn Live', price: 50.00)
 
 Page.delete_all
-p1 = Page.create(title: 'Page 1', description: 'This is page 1', book_id: b1.id)
-p2 = Page.create(title: 'Page 2', description: 'This is page 2', book_id: b1.id)
-p3 = Page.create(title: 'Page 3', description: 'This is page 3', book_id: b1.id)
-p4 = Page.create(title: 'Page 4', description: 'This is page 4', book_id: b1.id)
-p5 = Page.create(title: 'Page 5', description: 'This is page 5', book_id: b2.id)
+b0_p0 = Page.create(title: 'The Starting Place', description: "Your starting place may be...", book_id: b0.id)
+b0_p1 = Page.create(title: 'The why: values', description: "Simon Sinek, author of...", book_id: b0.id)
+
+Question.delete_all
+b0_p0_q0 = Question.create(title: 'My business name (or working title)', format: 'item', page_id: b0_p0.id)
+b0_p0_q1 = Question.create(title: 'What do you want to tet out of this process of branding? (Goals, questions to answer, expresions of existential angst...', format: 'item', page_id: b0_p0.id)
+
+b0_p1_q0 = Question.create(title: 'I do this work because (try to list at least 5 reasons.id)', format: 'list', page_id: b0_p1.id)
+b0_p1_q1 = Question.create(title: 'What are the personal values that I feel most strongly about? (List as many as you want.', format: 'list', page_id: b0_p1.id)
+b0_p1_q2 = Question.create(title: 'Which personal values are already in your business? How do they translate?', format: 'list', page_id: b0_p1.id)
+b0_p1_q3 = Question.create(title: "Which personal values that you listed seem out of alignment with your business or don't translate across context? Why do they seem disconnected?", format: 'essay', page_id: b0_p1.id)
+b0_p1_q4 = Question.create(title: "Are there values at work in your business that you don't share personally?", format: 'essay', page_id: b0_p1.id)
+
 
 OwnedBook.delete_all
-OwnedBook.create(user_id: u1.id, book_id: b1.id)
-OwnedBook.create(user_id: u1.id, book_id: b3.id)
-OwnedBook.create(user_id: u1.id, book_id: b8.id)
+#OwnedBook.create(user_id: u1.id, book_id: b1.id)
+#OwnedBook.create(user_id: u1.id, book_id: b3.id)
+#OwnedBook.create(user_id: u1.id, book_id: b8.id)

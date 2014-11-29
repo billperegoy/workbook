@@ -8,7 +8,7 @@
 <h3>This book has <%= pluralize(@book.pages.count, 'page') %></h3>
 <ul>
 <% @book.pages.each do |page| %>
-  <li><%= page.title %>
+  <li><%= link_to page.title, "#" %></li>
 <% end %>
 </ul>
 

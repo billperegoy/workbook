@@ -3,7 +3,9 @@ Workbook::Application.routes.draw do
 
   resources :users
   resources :books do
-    resources :pages
+    resources :pages do
+      resources :questions
+    end
   end
 
   get '/user/:id/add_book' => 'users#add_book', as: 'add_book'

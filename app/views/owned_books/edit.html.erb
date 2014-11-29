@@ -1,16 +1,20 @@
-<h1>Edit Book: <%= @book.title %></h1>
+<h1>Working On: <%= @book.title %></h1>
 
 <div class="panel-group" id="accordian">
   <% @book.pages.each do |page| %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordian" href="#collapse-<%= page.id %>"><%= page.title %></a>
+          <a data-toggle="collapse" data-parent="#accordian" href="#collapse-<%= page.id %>">Exercise: <%= page.title %></a>
         </h4>
       </div>
       <div id="collapse-<%= page.id %>" class="panel-collapse collapse">
         <div class="panel-body">
-          This is where we put the questions and forms to answer.
+          <ol>
+          <% page.questions.each do |question| %>
+            <li><%= question.title %></li> 
+          <% end %>
+        </ol>
         </div>
       </div>
     </div>
