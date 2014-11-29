@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
                        format: { with: VALID_USERNAME_REGEX },
                        length: { minimum: 4, maximum: 16 }
 
+  validates :name, presence: true,
+                   length: { maximum: 20 }
+
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX }
 
@@ -18,4 +21,9 @@ class User < ActiveRecord::Base
                        length: { minimum: 8}
 
   has_secure_password
+  has_many :owned_books
+
+  def add_book(book)
+    owned_book = OwnedBook.create(book_id: book.id, user_id: id)
+  end
 end

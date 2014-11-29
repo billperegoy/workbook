@@ -1,0 +1,10 @@
+<% if book %>
+  <div class="col-md-3">
+    <div class="product-box"><%= image_tag book.thumbnail %>
+       <caption class ="product-name"><%= link_to book.title, book %></caption>
+    </div>
+    <% if logged_in? %>
+      <%= link_to "Buy Me", add_to_cart_path(book) %>
+    <% end %>
+  </div>
+<% end %>

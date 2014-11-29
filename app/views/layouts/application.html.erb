@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Workbook</title>
+    <title><%= content_for?(:title) ? content_for(:title) : "Workbook" %></title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -23,7 +23,7 @@
     </div>
 
     <%= yield %>
-    <%= debug(params) if Rails.env.development? %>
+    <%= debug(params) if Rails.env.development?  && false%>
 
     <%= render "shared/footer" %>
   </body>

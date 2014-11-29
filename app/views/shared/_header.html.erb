@@ -6,43 +6,48 @@
     <div class="row">
       <div class="login-area-holder col-md-12">
         
-        <div class="spacer col-md-10">
-        </div><!-- end spacer -->
+        <div class="spacer col-md-10"></div><!-- end spacer -->
         
         <div class="login-area col-md-2">
+        
+        <div class="pull-right">
                   
         <% if logged_in? %>
           <div class="logged-in">
-            <span>hello name</span>
+            <span class="hello-user-name">Hello <%= session[:user_name] %></span>
             <span>&nbsp;|&nbsp;</span>
-            <%= link_to "log out", logout_path %>
+            <span class="log-in-out-button"><%= link_to "log out", logout_path %></span>
           </div><!-- end logged in-->
           
         <% else %>
           <div class="not-logged-in">
-            <a href="#">sign up</a>
+            <span class="log-in-out-button"><a href="#">sign up</a></span>
             <span>&nbsp;|&nbsp;</span>
-            <%= link_to "log in", login_path %>          
+            <span class="log-in-out-button"><%= link_to "log in", login_path %></span>          
             </div><!-- end not logged in -->
         <% end %>          
         
-        </p><!-- end login area-->
+        </div><!-- end pull-right -->
+        
+        </div><!-- end login area-->
 
       </div><!--end login-area-holder -->
     </div><!-- end row -->
 </div><!-- end container --> 
   
+
+
 <!--------------LOGO------------------->
 <div class="container-fluid">
     <div class="row">
       <div class="spacer col-md-3"></div>
-      <div id="logo" class="col-md-6 img-responsive">
-        <%= link_to image_tag("/assets/indieconomy-logo-600px.png"), root_path %> 
-          
-          
-         <!-- 
-          <img src="assets/indieconomy-logo-600px.png"  alt="Indieconomy Logo"></div>
-        -->  
+      
+      <div class="col-md-6">
+        <div id="logo">
+        <%= link_to image_tag("/assets/indieconomy-logo-600px.png", class:"img-responsive"), root_path %> 
+        </div><!--end logo-->
+      </div><!--end col md 6--> 
+         
       <div class="spacer col-md-3"></div>
     </div><!-- end row -->
 </div><!-- end container-->
@@ -50,21 +55,19 @@
 
 
 <!--------------NAV------------------->
-<nav class="navbar navbar-default" role="navigation"> 
-
-<div class="container"> 
-      <div class="spacer col-md-3"></div> 
-       <div class="col-md-6 center-block">  
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">shop</a></li>
-              <li><a href="#">about</a></li>
-              <% if logged_in? %>
-                <li><a href="#">my dashboard</a></li>
-              <% end %>
-              <li><a href="#">contact</a></li>
-            </ul>     
-        </div>
-      </div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">      
+      <div class="spacer col-md-3"></div>
+      <div class="col-md-6">  
+        <ul class="nav navbar-nav">
+          <li><%= link_to "shop", store_items_path %></li>
+          <li><%= link_to "about", about_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "my dashboard", user_path(current_user) %></li>
+          <% end %>
+          <li><%= link_to "contact", contact_path %></li
+        </ul>     
+      </div><!-- end col md 8--> 
       <div class="spacer col-md-3"></div>
   </div>
 </nav>

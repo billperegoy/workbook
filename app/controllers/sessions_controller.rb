@@ -17,6 +17,10 @@ class SessionsController < ApplicationController
     log_out 
   end
 
+  def logged_in_user
+    username
+  end
+
   private
   def username
     params[:session][:username].downcase

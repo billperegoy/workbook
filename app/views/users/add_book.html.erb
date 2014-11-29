@@ -1,0 +1,7 @@
+<h1>Purchase a Book</h1>
+
+  <%= form_for(@user) do |f| %>
+    <%= f.select(:username, @books) %>
+    <%= f.submit %>
+  <% end %>
+

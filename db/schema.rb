@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124214602) do
+ActiveRecord::Schema.define(version: 20141128164932) do
 
   create_table "books", force: true do |t|
     t.datetime "created_at"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20141124214602) do
     t.float    "price"
   end
 
+  create_table "owned_books", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "pages"
+    t.string   "description"
+    t.integer  "book_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "password_digest"
@@ -29,6 +45,7 @@ ActiveRecord::Schema.define(version: 20141124214602) do
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true

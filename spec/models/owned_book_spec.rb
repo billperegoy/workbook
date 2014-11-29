@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-describe Book do
+RSpec.describe OwnedBook, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

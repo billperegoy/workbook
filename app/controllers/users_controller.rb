@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_url
+    end
   end
 
   def edit
@@ -14,7 +17,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to @user, success: "User successfully updated."
+      flash[:success] = "User successfully update"
+      redirect_to @user
     else
       render :edit
     end
@@ -33,19 +37,23 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
-    user = User.find_by_username(params[:username])
-    if user && authenticate(params[:password])
-      session[:user_id] = user_id
-      #redirect_to root_path, :notice "Logged in as #{user.username}"
-    else
-      render :login
-    end
+  def add_book
+    @user = User.find(params[:id])
+    @books = Book.all.map { |book| book.title }
+    #book = Book.find_by(title: 'Book 6')
+    #@user.add_book(book)
+    #redirect_to user_path
   end
+
+  def record_not_found
+    flash[:danger] = 'User not found'
+    redirect_to root_path
+  end
+
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :email, :role)
+    params.require(:user).permit(:username, :name, :password, :password_confirmation, :email, :role)
   end
 
 end

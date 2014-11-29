@@ -7,14 +7,17 @@ $grey: #888888;
 $orange: #ff8500;
 
 
-
+////////////////logo/////////////
 
 #logo {
-	text-align: center;
+  margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
 }
 
 #logo a:hover {
-  opacity: .5;
+  opacity: .75;
 }
 
 
@@ -23,25 +26,17 @@ $orange: #ff8500;
 //whole nav bar
 .navbar.navbar-default {
   background: none; 
-  border: 1pt blue solid;
   box-shadow: none; 
+  border: none;
 }
 
 
-
-//center part of nav with content
-ul.nav.navbar-nav  {
-  border: 1pt pink solid;
-}
-
-
-
-//each menu item
-ul.nav.navbar-nav li {
-
-
-}
-
+.navbar-nav{
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
+    }
 
 
 //link text in nav
@@ -71,12 +66,34 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 }
 
 
-// login area 
+////////////////log in area/////////////
+
+// pushes it down from top
+.login-area-holder {
+  padding-top: 5px;
+}
 
 
+//states for inactive buttons in area
+.log-in-out-button, .log-in-out-button a, .log-in-out-button a:link {
+  font-family: "Trebuchet MS";
+  font-weight: bold;
+  font-size: 1em;
+  color: $brightblue;
+}
 
-.not-logged-in {
-  
+//hover states
+.log-in-out-button a:hover {
+  color: $orange;
+  text-decoration: none;
+ 
+}
+
+//user name style
+.hello-user-name {
+  color: $brightpink;
+  font-weight: bold;
+
 }
 
 

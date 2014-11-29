@@ -1,39 +1,71 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    if admin_user?
+      @books = Book.all
+    else
+      redirect_non_admin_user
+    end
   end
 
   def show
-    @book = Book.find(params[:id])
+    if admin_user?
+      @book = Book.find(params[:id])
+    else
+      redirect_non_admin_user
+    end
   end
 
   def edit
-    @book = Book.find(params[:id])
+    if admin_user?
+      @book = Book.find(params[:id])
+    else
+      redirect_non_admin_user
+    end
   end
 
   def update
-    @book = Book.find(params[:id])
-    if @book.update(book_params)
-      redirect_to @book, notice: "Book successfully updated."
+    if admin_user?
+      @book = Book.find(params[:id])
+      if @book.update(book_params)
+        redirect_to @book, notice: "Book successfully updated."
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_non_admin_user
     end
   end
 
   def new
-    @book = Book.new
+    if admin_user?
+      @book = Book.new
+    else
+      redirect_non_admin_user
+    end
   end
 
   def create
-    @book = Book.new(book_params)
-    if @book.save(book_params)
-      redirect_to @book, notice: "Book successfully created."
+    if admin_user?
+      @book = Book.new(book_params)
+      if @book.save(book_params)
+        redirect_to @book, notice: "Book successfully created."
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_non_admin_user
     end
   end
 
   private
+  def redirect_non_admin_user
+    if logged_in?
+      redirect_to user_path(current_user)
+    else
+      redirect_to root_path 
+    end
+  end
+
   def book_params
     params.require(:book).permit(:title, :thumbnail, :descrition, :price)
   end
