@@ -7,14 +7,17 @@ $grey: #888888;
 $orange: #ff8500;
 
 
-
+////////////////logo/////////////
 
 #logo {
-	text-align: center;
+  margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
 }
 
 #logo a:hover {
-  opacity: .5;
+  opacity: .75;
 }
 
 
@@ -23,38 +26,27 @@ $orange: #ff8500;
 //whole nav bar
 .navbar.navbar-default {
   background: none; 
+  box-shadow: none; 
   border: none;
-  box-shadow: none;
-  
 }
 
 
-
-//center part of nav with content
-ul.nav.navbar-nav  {
-border: 1pt pink solid;
-float: none;
-  
-}
-
-ul.nav.navbar-nav li {
-
-  text-align: center;
-}
+.navbar-nav{
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
+    }
 
 
-.navbar-bar .nav {
-  float: none;
-}
-
-
-//link text in nv
+//link text in nav
 ul.nav.navbar-nav li a{
   color: $brightblue;
   font-family: Arial "Tienne", Georgia;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.1em;
+
 }
 
 //active link in nav
@@ -65,6 +57,7 @@ ul.nav.navbar-nav li.active a {
   color: $brightpink;
 }
 
+//hover for active and non-active links in nav
 ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
   color: $orange;  
   background-image: none;
@@ -73,12 +66,34 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 }
 
 
-// login area 
+////////////////log in area/////////////
+
+// pushes it down from top
+.login-area-holder {
+  padding-top: 5px;
+}
 
 
+//states for inactive buttons in area
+.log-in-out-button, .log-in-out-button a, .log-in-out-button a:link {
+  font-family: "Trebuchet MS";
+  font-weight: bold;
+  font-size: 1em;
+  color: $brightblue;
+}
 
-.not-logged-in {
-  
+//hover states
+.log-in-out-button a:hover {
+  color: $orange;
+  text-decoration: none;
+ 
+}
+
+//user name style
+.hello-user-name {
+  color: $brightpink;
+  font-weight: bold;
+
 }
 
 

@@ -6,43 +6,48 @@
     <div class="row">
       <div class="login-area-holder col-md-12">
         
-        <div class="spacer col-md-10">
-        </div><!-- end spacer -->
+        <div class="spacer col-md-10"></div><!-- end spacer -->
         
         <div class="login-area col-md-2">
+        
+        <div class="pull-right">
                   
         <% if logged_in? %>
           <div class="logged-in">
-            <span>hello <%= session[:user_name] %></span>
+            <span class="hello-user-name">Hello <%= session[:user_name] %></span>
             <span>&nbsp;|&nbsp;</span>
-            <%= link_to "log out", logout_path %>
+            <span class="log-in-out-button"><%= link_to "log out", logout_path %></span>
           </div><!-- end logged in-->
           
         <% else %>
           <div class="not-logged-in">
-            <a href="#">sign up</a>
+            <span class="log-in-out-button"><a href="#">sign up</a></span>
             <span>&nbsp;|&nbsp;</span>
-            <%= link_to "log in", login_path %>          
+            <span class="log-in-out-button"><%= link_to "log in", login_path %></span>          
             </div><!-- end not logged in -->
         <% end %>          
         
-        </p><!-- end login area-->
+        </div><!-- end pull-right -->
+        
+        </div><!-- end login area-->
 
       </div><!--end login-area-holder -->
     </div><!-- end row -->
 </div><!-- end container --> 
   
+
+
 <!--------------LOGO------------------->
 <div class="container-fluid">
     <div class="row">
       <div class="spacer col-md-3"></div>
-      <div id="logo" class="col-md-6 img-responsive">
-        <%= link_to image_tag("/assets/indieconomy-logo-600px.png"), root_path %> 
-          
-          
-         <!-- 
-          <img src="assets/indieconomy-logo-600px.png"  alt="Indieconomy Logo"></div>
-        -->  
+      
+      <div class="col-md-6">
+        <div id="logo">
+        <%= link_to image_tag("/assets/indieconomy-logo-600px.png", class:"img-responsive"), root_path %> 
+        </div><!--end logo-->
+      </div><!--end col md 6--> 
+         
       <div class="spacer col-md-3"></div>
     </div><!-- end row -->
 </div><!-- end container-->
@@ -64,7 +69,7 @@
         </ul>     
       </div><!-- end col md 8--> 
       <div class="spacer col-md-3"></div>
-  </div><!-- end container-fluid -->
+  </div>
 </nav>
 
 
