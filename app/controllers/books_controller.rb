@@ -8,11 +8,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    if admin_user?
-      @book = Book.find(params[:id])
-    else
-      redirect_non_admin_user
-    end
+    @book = Book.find(params[:id])
   end
 
   def edit

@@ -1,0 +1,23 @@
+<h1>Working On: <%= @book.title %></h1>
+
+<div class="panel-group" id="accordian">
+  <% @book.pages.each do |page| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordian" href="#collapse-<%= page.id %>">Exercise: <%= page.title %></a>
+        </h4>
+      </div>
+      <div id="collapse-<%= page.id %>" class="panel-collapse collapse">
+        <div class="panel-body">
+          <%= page.description %>
+          <ol>
+          <% page.questions.each do |question| %>
+            <li><%= link_to question.title, "#" %></li> 
+          <% end %>
+        </ol>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

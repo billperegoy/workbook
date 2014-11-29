@@ -1,9 +1,18 @@
 <h1>Book Details</h1>
 <h3>Title: <%= @book.title %></h3>
-<h3>Thumbnail: <%= @book.thumbnail %></h3>
 <%= image_tag @book.thumbnail %>
 <h3>Description: <%= @book.description %></h3>
 <h3>Price: <%= @book.price %></h3>
 
-<p><%= link_to "edit this book", edit_book_path %></p>
-<p><%= link_to "back to book list", books_path %></p>
+<h3>This book has <%= pluralize(@book.pages.count, 'page') %></h3>
+<ul>
+<% @book.pages.each do |page| %>
+  <li><%= link_to page.title, "#" %></li>
+<% end %>
+</ul>
+
+<% if logged_in? %>
+  <p><%= link_to "add a page to this book", new_book_page_path(@book) %></p>
+  <p><%= link_to "edit this book", edit_book_path %></p>
+  <p><%= link_to "back to book list", books_path %></p>
+<% end %>

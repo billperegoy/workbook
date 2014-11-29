@@ -1,0 +1,11 @@
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+    action
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to "Edit Book", edit_owned_book_path(book_id: owned_book.book_id) %></li>
+    <li><%= link_to "Print Template", "#" %></li>
+    <li><%= link_to "Print Work", "#" %></li>
+  </ul>
+</div>
