@@ -10,9 +10,10 @@
       </div>
       <div id="collapse-<%= page.id %>" class="panel-collapse collapse">
         <div class="panel-body">
+          <%= page.description %>
           <ol>
           <% page.questions.each do |question| %>
-            <li><%= question.title %></li> 
+            <li><%= link_to question.title, "#" %></li> 
           <% end %>
         </ol>
         </div>

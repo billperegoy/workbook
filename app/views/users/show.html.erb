@@ -5,7 +5,8 @@
     <td><%= owned_book.book.title %></td>
     <td>
       <div class="progress">
-        <div class="progress-bar" style="width: <%= owned_book.percent_complete %>;"><%= owned_book.percent_complete %></div>
+        <% @percent_complete = owned_book.percent_complete %>
+        <div class="progress-bar" style="width: <%= @percent_complete %>;"><%= @percent_complete %></div>
       </div>
     </td>
     <td><%= render partial: 'dashboard_dropdown', locals: { owned_book: owned_book } %></td>

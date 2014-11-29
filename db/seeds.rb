@@ -15,14 +15,14 @@ b2 = Book.create(title: '1 To 1', thumbnail: '1to1-300x300.png', description: '1
 b3 = Book.create(title: 'Learn Live', thumbnail: 'learn-live-300x300.png', description: 'Learn Live', price: 50.00)
 
 Page.delete_all
-b0_p0 = Page.create(title: 'The Starting Place', description: "Your starting place may be...", book_id: b0.id)
-b0_p1 = Page.create(title: 'The why: values', description: "Simon Sinek, author of...", book_id: b0.id)
+b0_p0 = Page.create(title: 'The Starting Place', description: "Your starting place may be... blah blah blah blahi blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
+b0_p1 = Page.create(title: 'The why: values', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
 
 Question.delete_all
 b0_p0_q0 = Question.create(title: 'My business name (or working title)', format: 'item', page_id: b0_p0.id)
-b0_p0_q1 = Question.create(title: 'What do you want to tet out of this process of branding? (Goals, questions to answer, expresions of existential angst...', format: 'item', page_id: b0_p0.id)
+b0_p0_q1 = Question.create(title: 'What do you want to get out of this process of branding? (Goals, questions to answer, expresions of existential angst...)', format: 'item', page_id: b0_p0.id)
 
-b0_p1_q0 = Question.create(title: 'I do this work because (try to list at least 5 reasons.id)', format: 'list', page_id: b0_p1.id)
+b0_p1_q0 = Question.create(title: 'I do this work because (try to list at least 5 reasons)', format: 'list', page_id: b0_p1.id)
 b0_p1_q1 = Question.create(title: 'What are the personal values that I feel most strongly about? (List as many as you want.', format: 'list', page_id: b0_p1.id)
 b0_p1_q2 = Question.create(title: 'Which personal values are already in your business? How do they translate?', format: 'list', page_id: b0_p1.id)
 b0_p1_q3 = Question.create(title: "Which personal values that you listed seem out of alignment with your business or don't translate across context? Why do they seem disconnected?", format: 'essay', page_id: b0_p1.id)
