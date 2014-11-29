@@ -8,19 +8,7 @@
         <div class="progress-bar" style="width: <%= owned_book.percent_complete %>;"><%= owned_book.percent_complete %></div>
       </div>
     </td>
-    <td>
-      <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-          action
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Edit Book</a></li>
-          <li><a href="#">Print Template</a></li>
-          <li><a href="#">Print Work</a></li>
-        </ul>
-      </div>
-    </td>
+    <td><%= render partial: 'dashboard_dropdown', locals: { owned_book: owned_book } %></td>
   </tr>
   <% end %>
 </table>

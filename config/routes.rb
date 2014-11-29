@@ -11,6 +11,7 @@ Workbook::Application.routes.draw do
   get '/store_items' => 'store_items#index'
   get '/store_items/:id/add_to_cart' => 'store_items#add_to_cart', as: 'add_to_cart'
 
+  get '/user/:id/owned_books/:book_id/edit' => 'owned_books#edit', as: 'edit_owned_book'
   get '/static_pages/about' => 'static_pages#about', as: 'about'
   get '/static_pages/contact' => 'static_pages#contact', as: 'contact'
 
