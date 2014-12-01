@@ -9,7 +9,7 @@ u7 = User.create(name: 'Linda Poophead', username: 'linda', password: 'password'
 
 
 Book.delete_all
-b0 = Book.create(title: 'Know Your Brand', thumbnail: 'know-your-brand-class1-300x300.png', description: 'Know your brand class', price: 50.00)
+b0 = Book.create(title: 'Know Your Brand', thumbnail: 'know-your-brand-class1-300x300.png', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', price: 50.00)
 b1 = Book.create(title: 'Tagline Workshop', thumbnail: 'tagline-workbook-300x300.png', description: 'Tagline Workbook', price: 50.00)
 b2 = Book.create(title: '1 To 1', thumbnail: '1to1-300x300.png', description: '1 To 1', price: 50.00)
 b3 = Book.create(title: 'Learn Live', thumbnail: 'learn-live-300x300.png', description: 'Learn Live', price: 50.00)

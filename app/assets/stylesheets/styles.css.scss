@@ -1,19 +1,29 @@
+//color variables
 $greenblue: #52c4ba;
+$green: #4a999f;
 $gold: #F7941D;
 $dullpink: #D04D57;
 $brightpink: #DF0D79;
 $brightblue: #10B3BC;
 $grey: #888888;
-$orange: #ff8500;
+$orange: #f7931D;
+$lightgrey: rgba(0,0,0,.15);
+
+//typeface variables
+$treb: "Trebuchet MS";
+$tien: "Tienne";
+
+
+
 
 
 ////////////////logo/////////////
 
 #logo {
   margin: 0 auto;
-    display: table;
-    table-layout: fixed;
-    float:none;
+  display: table;
+  table-layout: fixed;
+  float:none;
 }
 
 #logo a:hover {
@@ -42,10 +52,10 @@ $orange: #ff8500;
 //link text in nav
 ul.nav.navbar-nav li a{
   color: $brightblue;
-  font-family: Arial "Tienne", Georgia;
+  font-family: "Trebuchet MS";
   text-transform: uppercase;
-  font-weight: bold;
   font-size: 1.1em;
+  letter-spacing: .2em;
 
 }
 
@@ -97,34 +107,86 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 }
 
 
+////////////////products on home page/////////////
 
 
 .product-box {
 	margin: 20px;
 	padding: 5px;
-	border: 1pt solid black;
+
 }
 
 
-.product-image {
-  width: 210px;
+.product-image img {
+  width: 250px;
+  border: 2px $orange dashed;
+  padding: 4px;
 }
 
-.product-name {
-  font-size: 1.143em;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #52c4ba;
-  font-family: georgia;
+
+.product-image img:hover {
+  opacity: .75;
 }
 
-.product-name a {
+
+////////////////description page/////////////
+
+.description-page-picture img {
+  width: 300px;
+    float: right;
+
+}
+
+description-page-picture-column {
+  
+}
+
+.product-long-description {
+  float: left;
+}
+
+.product-long-description p {
+  font-size: 1.6em;
+  line-height: 2em;
+  color: $green;
+  font-family: $tien;
+}
+
+
+h1.description-page {
+  color: $orange;
+  font-size: 2.5em;
+  border-bottom: 1px dashed $lightgrey;
+  font-family: $treb;
+}
+
+
+.btn-default,  {
+  background-color: $dullpink;
+  font-family: $treb;
+  font-weight: 200;
   color: white;
-  background-color: #52c4ba;
+  letter-spacing: .2em;
+  font-size: 1.2em;
+  border: none;
+
 }
+
+.btn-default:hover {
+  background-color: $orange ;
+  font-family: $treb;
+  font-weight: 200;
+  color: white;
+  letter-spacing: .2em;
+  font-size: 1.2em;
+  border: none;
+
+}
+
+
+////////////////footer/////////////
 
 
 footer {
-	background-color: grey;
-	height: 50px;
+
 }
