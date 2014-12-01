@@ -2,9 +2,14 @@ Workbook::Application.routes.draw do
   root 'store_items#index'
 
   resources :users
+
+  # These are really deeply nested. Should I just define the 
+  # routes I need?
   resources :books do
     resources :pages do
-      resources :questions
+      resources :questions do
+        resources :answers
+      end
     end
   end
 

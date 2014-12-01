@@ -1,0 +1,10 @@
+<h3><%= @question.title %></h3>
+<%= form_for([@book, @page, @question, @answer]) do |f| %>
+  <p>
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
