@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141130000638) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,6 +65,6 @@ ActiveRecord::Schema.define(version: 20141130000638) do
     t.string   "name"
   end
 
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
