@@ -8,14 +8,41 @@ $brightblue: #10B3BC;
 $grey: #888888;
 $orange: #f7931D;
 $lightgrey: rgba(0,0,0,.15);
+$red: #D04D57;
 
 //typeface variables
-$treb: "Trebuchet MS";
-$tien: "Tienne";
+$treb: "Trebuchet MS", Verdana, Sans-serif;
+$tien: "Tienne", Georgia, Serif;
 
 
 
+//////////general type styles/////////////
+h1 {
+  color: $orange;
+  font-size: 2.2em;
+  border-bottom: 1px dashed $lightgrey;
+  font-family: $treb;
+  
+}
 
+h2 {
+  text-transform: uppercase;
+  color: #53c3bb;
+  text-weight: normal;
+  font-size: 1.3em;
+  margin-top: 30px;
+  font-family: $tien;
+  line-height: 100%;
+  margin-bottom: 1em; 
+}
+
+p {
+  margin-bottom: 1.1em;
+  font-family: $tien;
+  color: #333;
+  line-height: 1.9em;
+  font-size: 1.3em;
+}
 
 ////////////////logo/////////////
 
@@ -42,11 +69,11 @@ $tien: "Tienne";
 
 
 .navbar-nav{
-    margin: 0 auto;
-    display: table;
-    table-layout: fixed;
-    float:none;
-    }
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  float:none;
+}
 
 
 //link text in nav
@@ -153,12 +180,6 @@ description-page-picture-column {
 }
 
 
-h1.description-page {
-  color: $orange;
-  font-size: 2.5em;
-  border-bottom: 1px dashed $lightgrey;
-  font-family: $treb;
-}
 
 
 .btn-default,  {
@@ -183,6 +204,51 @@ h1.description-page {
 
 }
 
+////////////////static pages/////////////
+.sidebar-box {
+  border: 1pt $orange dashed;
+  margin: 0 25px;
+  background-color: #fffff7; 
+}
+
+h3.sidebar-title {
+  color: white;
+  text-transform: uppercase;
+  font-family: $treb;
+  background-color: $greenblue;
+  margin-top: 0;
+  font-size: 1.3em;
+  padding: 5px;
+  letter-spacing: .1em;
+}
+
+p.sidebar-intro {
+  padding: 0 5% 0 5%;
+  font-size: 1.1em;
+  color: $red;
+  font-family: $treb;
+  line-height: 1.5em;
+}
+
+
+ul.sidebar-list {
+  list-style-position: outside;
+  font-size: 1.1em;
+  font-family: $treb;
+  line-height: 1.5em;
+  padding: 0 10% 10% 0;
+  margin-left: 11%;
+  color: #8a8282;
+}
+
+ul.sidebar-list li {
+  padding-bottom: 10px;
+}
+
+.portrait {
+  float: left;
+  padding-right: 10px;
+}
 
 ////////////////footer/////////////
 
