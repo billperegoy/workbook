@@ -23,6 +23,15 @@ class AnswersController < ApplicationController
     @book = @page.book
   end
 
+  def update
+    @answer = Answer.find(params[:id])
+    if @answer.update(answer_params)
+      redirect_to edit_owned_book_path(id: current_user)
+    else
+      render :edit
+    end
+  end
+
   private
   def answer_params
     params.require(:answer).permit(:value)
