@@ -1,0 +1,16 @@
+<%= form_for([@book, @page, @question, @answer]) do |f| %>
+  <% if (@question.format == 'essay') %>
+    <p>
+      <%= f.text_area :value, cols: 80, rows: 10 %>
+    </p>
+  <% else %>
+    <p>
+      <%= f.text_field :value %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
