@@ -16,6 +16,11 @@ class AnswersController < ApplicationController
     end
   end
 
+  def edit
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+  end
+
   private
   def answer_params
     params.require(:answer).permit(:value)
