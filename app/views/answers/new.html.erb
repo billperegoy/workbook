@@ -1,8 +1,16 @@
 <h3><%= @question.title %></h3>
+<h4>Format: <%= @question.format %></h4>
 <%= form_for([@book, @page, @question, @answer]) do |f| %>
-  <p>
-    <%= f.text_field :value %>
-  </p>
+  <% if (@question.format == 'essay') %>
+    <p>
+      <%= f.text_area :value, cols: 80, rows: 10 %>
+    </p>
+  <% else %>
+    <p>
+      <%= f.text_field :value %>
+    </p>
+  <% end %>
+
   <p>
     <%= f.submit %>
   </p>

@@ -11,14 +11,7 @@
       <div id="collapse-<%= page.id %>" class="panel-collapse collapse">
         <div class="panel-body">
           <%= page.description %>
-          <ol>
-          <% page.questions.each do |question| %>
-            <li><%= link_to question.title, new_book_page_question_answer_path(page_id: page.id, question_id: question.id) %></li> 
-            <% if question.answers.count > 0 %>
-              <p>Has <%= question.answers.count %> answers</p>
-            <% end %>
-          <% end %>
-        </ol>
+          <%= render partial: 'question_list', locals: {page: page} %>
         </div>
       </div>
     </div>
