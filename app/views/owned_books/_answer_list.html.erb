@@ -1,5 +1,6 @@
 <ul>
   <% question.answers.each do |answer| %>
     <li><%= link_to answer.value, edit_book_page_question_answer_path(page_id: page.id, question_id: question.id, answer_id: answer.id) %></li>
+    <%=link_to '[delete]', book_page_question_answer_path(page_id: page.id, question_id: question.id, answer_id: answer.id), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </ul>

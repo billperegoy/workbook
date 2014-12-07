@@ -32,6 +32,12 @@ class AnswersController < ApplicationController
     end
   end
 
+  def destroy
+    @answer = Answer.find(params[:answer_id])
+    @answer.destroy
+    redirect_to edit_owned_book_path(id: current_user)
+  end
+
   private
   def answer_params
     params.require(:answer).permit(:value)
