@@ -28,6 +28,9 @@
     <%= debug(params) if Rails.env.development? && ENV['DEBUG'] %>
 
     <%= render "shared/footer" %>
-    <%= render "sessions/login_modal" %>
+
+    <!-- This is where Ajax will be used to render the login modal if needed -->
+    <div id="login-modal-wrapper"></div>
+
   </body>
 </html>
