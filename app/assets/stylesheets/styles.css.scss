@@ -250,6 +250,45 @@ ul.sidebar-list li {
   padding-right: 10px;
 }
 
+////////////////book pages/////////////
+.exercise-number {
+  font-family: $tien;
+  color: $grey;
+}
+
+.super-script {
+  vertical-align: super;
+  font-size: smaller;
+  margin-left: -5px;
+}
+
+.guillemet {
+  vertical-align: text-top;
+}
+
+p.exercise-description {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+.question {
+  font-size: 1.3em;
+  line-height: 1.6em;
+  font-family: $treb;
+  color: $brightblue;
+  font-weight: bold;
+  margin-bottom: 2em;
+
+}
+
+li.question-text {
+  margin-bottom: .3em;
+}
+
+.question-action-buttons {
+  margin-bottom: 2em;
+}
+
 ////////////////footer/////////////
 
 

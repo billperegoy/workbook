@@ -1,27 +1,53 @@
-<h1>Working On: <%= @book.title %></h1>
+<!-- Working On: <%= @book.title %> -->
 
-<div class="panel-group" id="accordian">
-  <% @book.pages.each do |page| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordian" href="#collapse-<%= page.id %>">Exercise: <%= page.title %></a>
-        </h4>
-      </div>
-      <div id="collapse-<%= page.id %>" class="panel-collapse collapse">
-        <div class="panel-body">
-          <%= page.description %>
-          <%= render partial: 'question_list', locals: {page: page} %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 spacer"></div>
+    <div class="col-md-7">
+      <div class="exercise-content">
+        <h1 class="exercise-title"> 
+        <span class="exercise-number">N
+          <span class="super-script">o</span> 
+          1 <span class="guillemet">&raquo; </span>
+          </span>  
+        The Starting Place
+        </h1>          
+        <% page = @book.pages[0] %>
+        <p class="exercise-description"><%= page.description %></p>
+        <%= render partial: 'question_list', locals: {page: page} %>
+      </div><!-- end exercise content-->
+    </div><!-- end col md 7-->
+    <div class="col-md-3">
+      <div class="sidebar-box">
+        <h3 class="sidebar-title">Pages in this Book</h3>
+        <ul class="sidebar-list">
+          <li><a href="#">No 1: The Starting Place</a></li>
+        </ul>
+      </div><!-- end sidebar box-->
+    </div><!-- end col md 3-->
+    <div class="col-md-1 spacer">
+    </div><!-- end row-->
+  </div><!-- end container -->
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- I want to use a modal to bring up the individual edit of a question -->
 <!-- This really doesn't do it. It's just code to eventually copy when I get the Answer class working -->
-<!-- Modal -->
+<!-- Modal
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -39,4 +65,4 @@
     </div>
   </div>
 </div>
-
+-->
