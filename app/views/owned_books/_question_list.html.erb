@@ -1,6 +1,9 @@
-<ol>
+<ol class="question">
   <% page.questions.each do |question| %>
-    <li><%= question.title %></li> 
+    <li class="question-text"><%= question.title %></li> 
+    
+    <!-- add INFO button after question text-->
+     
     <% if (question.format == 'list') %>
       <%= link_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id) %>
       <%= render partial: 'answer_list', locals: {page: page, question: question} %>

@@ -1,4 +1,8 @@
+<input type="text" class="form-control" placeholder="">
+
+<div class="question-action-buttons">
 <% if (question.answers.length > 0) %>
   <%= link_to question.answers[0].value, edit_book_page_question_answer_path(page_id: page.id, question_id: question.id, answer_id: question.answers[0].id) %> 
   <%=link_to '[delete]', book_page_question_answer_path(page_id: page.id, question_id: question.id, answer_id: question.answers[0].id), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+</div>
