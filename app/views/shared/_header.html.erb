@@ -5,49 +5,49 @@
 <div class="container-fluid">
     <div class="row">
       <div class="login-area-holder col-md-12">
-        
+
         <div class="spacer col-md-10"></div><!-- end spacer -->
-        
+
         <div class="login-area col-md-2">
-        
+
         <div class="pull-right">
-                  
+
         <% if logged_in? %>
           <div class="logged-in">
             <span class="hello-user-name">Hello <%= session[:user_name] %></span>
             <span>&nbsp;|&nbsp;</span>
             <span class="log-in-out-button"><%= link_to "log out", logout_path %></span>
           </div><!-- end logged in-->
-          
+
         <% else %>
           <div class="not-logged-in">
             <span class="log-in-out-button"><a href="#">sign up</a></span>
             <span>&nbsp;|&nbsp;</span>
-            <span class="log-in-out-button"><%= link_to "log in", login_path %></span>          
+            <span class="log-in-out-button"><%= link_to "log in", login_path, remote: true %></span>
             </div><!-- end not logged in -->
-        <% end %>          
-        
+        <% end %>
+
         </div><!-- end pull-right -->
-        
+
         </div><!-- end login area-->
 
       </div><!--end login-area-holder -->
     </div><!-- end row -->
-</div><!-- end container --> 
-  
+</div><!-- end container -->
+
 
 
 <!--------------LOGO------------------->
 <div class="container-fluid">
     <div class="row">
       <div class="spacer col-md-3"></div>
-      
+
       <div class="col-md-6">
         <div id="logo">
-        <%= link_to image_tag("/assets/indieconomy-logo-600px.png", class:"img-responsive"), root_path %> 
+        <%= link_to image_tag("/assets/indieconomy-logo-600px.png", class:"img-responsive"), root_path %>
         </div><!--end logo-->
-      </div><!--end col md 6--> 
-         
+      </div><!--end col md 6-->
+
       <div class="spacer col-md-3"></div>
     </div><!-- end row -->
 </div><!-- end container-->
@@ -56,9 +56,9 @@
 
 <!--------------NAV------------------->
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">      
+  <div class="container-fluid">
       <div class="spacer col-md-3"></div>
-      <div class="col-md-6 nav-holder">  
+      <div class="col-md-6 nav-holder">
         <ul class="nav navbar-nav">
           <li><%= link_to "shop", store_items_path %></li>
           <li><%= link_to "about", about_path %></li>
@@ -66,8 +66,8 @@
             <li><%= link_to "my dashboard", user_path(current_user) %></li>
           <% end %>
           <li><%= link_to "contact", contact_path %></li
-        </ul>     
-      </div><!-- end col md 8--> 
+        </ul>
+      </div><!-- end col md 8-->
       <div class="spacer col-md-3"></div>
   </div>
 </nav>
