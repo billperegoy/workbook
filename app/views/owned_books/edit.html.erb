@@ -1,11 +1,11 @@
-<!-- Working On: <%= @book.title %> -->
-<% page = @book.pages[1] %>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-1 spacer"></div>
 
     <div class="col-md-7">
-      <div id="single-page-wrapper"> </div>
+      <div id="single-page-wrapper">
+        <%= render partial: 'single_page', locals: {page: @book.pages[0]} %>
+      </div>
     </div>
 
     <div class="col-md-3">
@@ -13,5 +13,5 @@
     </div>
 
     <div class="col-md-1 spacer">
-  </div><!-- end row-->
-</div><!-- end container -->
+  </div>
+</div>
