@@ -15,12 +15,13 @@ b2 = Book.create(title: '1 To 1', thumbnail: '1to1-300x300.png', description: '1
 b3 = Book.create(title: 'Learn Live', thumbnail: 'learn-live-300x300.png', description: 'Learn Live', price: 50.00)
 
 Page.delete_all
-b0_p0 = Page.create(number: 1, title: 'The Starting Place', description: "Your starting place may be... blah blah blah blahi blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
-b0_p1 = Page.create(number: 2, title: 'The why: values', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
-b0_p2 = Page.create(number: 3, title: 'Another page', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
-b0_p3 = Page.create(number: 4, title: 'Yet another page', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
-b0_p4 = Page.create(number: 5, title: 'Kitty Kitty Page', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
-b0_p5 = Page.create(number: 6, title: 'Sheep Page', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
+b0_p0 = Page.create(number: 1, title: 'The Starting Place', description: "Your starting place may be..." + Forgery(:lorem_ipsum).words(300), book_id: b0.id)
+b0_p1 = Page.create(number: 2, title: 'The why: values', description: "Simon Sinek, author of..." + Forgery(:lorem_ipsum).words(300),  book_id: b0.id)
+b0_p2 = Page.create(number: 3, title: 'Another page', description: Forgery(:lorem_ipsum).words(150), book_id: b0.id)
+b0_p3 = Page.create(number: 4, title: 'Yet Another page', description: Forgery(:lorem_ipsum).words(150), book_id: b0.id)
+b0_p4 = Page.create(number: 5, title: 'Kitty Kitty Page', description: Forgery(:lorem_ipsum).words(150), book_id: b0.id)
+b0_p5 = Page.create(number: 6, title: 'Sheep page', description: Forgery(:lorem_ipsum).words(150), book_id: b0.id)
+b0_p6 = Page.create(number: 7, title: 'Out of Names Page', description: Forgery(:lorem_ipsum).words(150), book_id: b0.id)
 
 Question.delete_all
 b0_p0_q0 = Question.create(title: 'My business name (or working title)', format: 'item', page_id: b0_p0.id)
