@@ -15,7 +15,12 @@ class PagesController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:book_id])
     @page = Page.find(params[:id])
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def edit

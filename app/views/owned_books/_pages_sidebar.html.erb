@@ -2,7 +2,7 @@
   <h3 class="sidebar-title">Pages in this Book</h3>
   <ul class="sidebar-list">
     <% @book.pages.each do |page| %>
-      <li><%= link_to page.title, book_page_path(@book, page)%></li>
+      <li><%= link_to page.title, book_page_path(@book, page), remote: true%></li>
     <% end %>
   </ul>
 </div>

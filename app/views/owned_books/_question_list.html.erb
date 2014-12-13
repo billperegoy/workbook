@@ -6,9 +6,9 @@
      
     <% if (question.format == 'list') %>
       <%= link_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id) %>
-      <%= render partial: 'answer_list', locals: {page: page, question: question} %>
+      <%= render partial: 'owned_books/answer_list', locals: {page: page, question: question} %>
     <% else %>
-      <%= render partial: 'answer_single', locals: {page: page, question: question} %>
+      <%= render partial: 'owned_books/answer_single', locals: {page: page, question: question} %>
       <% if question.answers.length != 1 %>
         <%= link_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id) %>
       <% end %>
