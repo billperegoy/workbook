@@ -15,8 +15,8 @@ b2 = Book.create(title: '1 To 1', thumbnail: '1to1-300x300.png', description: '1
 b3 = Book.create(title: 'Learn Live', thumbnail: 'learn-live-300x300.png', description: 'Learn Live', price: 50.00)
 
 Page.delete_all
-b0_p0 = Page.create(title: 'The Starting Place', description: "Your starting place may be... blah blah blah blahi blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
-b0_p1 = Page.create(title: 'The why: values', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
+b0_p0 = Page.create(number: 1, title: 'The Starting Place', description: "Your starting place may be... blah blah blah blahi blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
+b0_p1 = Page.create(number: 2, title: 'The why: values', description: "Simon Sinek, author of...  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", book_id: b0.id)
 
 Question.delete_all
 b0_p0_q0 = Question.create(title: 'My business name (or working title)', format: 'item', page_id: b0_p0.id)
