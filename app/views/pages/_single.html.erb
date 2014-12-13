@@ -3,10 +3,10 @@
     <span class="exercise-number">N <span class="super-script">o</span>
       <%= @page.number %> 
       <span class="guillemet">&raquo; </span>
-    </span>  
+    </span>
     <%= @page.title %>
   </h1>
 
   <p class="exercise-description"><%= @page.description %></p>
-  <%= render partial: 'owned_books/question_list', locals: {page: @page} %>
-</div><!-- end exercise content-->
+  <%= render partial: 'pages/question_list', locals: {page: @page} %>
+</div>
