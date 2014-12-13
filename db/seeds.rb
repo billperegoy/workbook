@@ -34,6 +34,7 @@ b0_p1_q3 = Question.create(title: "Which personal values that you listed seem ou
 b0_p1_q4 = Question.create(title: "Are there values at work in your business that you don't share personally?", format: 'essay', page_id: b0_p1.id)
 
 
+Answer.delete_all
 OwnedBook.delete_all
 #OwnedBook.create(user_id: u1.id, book_id: b1.id)
 #OwnedBook.create(user_id: u1.id, book_id: b3.id)

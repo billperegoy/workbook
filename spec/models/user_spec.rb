@@ -3,6 +3,7 @@ require 'rails_helper'
 describe User do
   before(:each) do
     @user = User.new(username: "sheep",
+                     name: "The Sheep",
                      email: "sheep@sheep.com",
                      role: 'user',
                      password: "neatmeat",
@@ -69,5 +70,4 @@ describe User do
     @user.password_confirmation = "meatmea"
     expect(@user.valid?).to eq(false)
   end
-
 end
