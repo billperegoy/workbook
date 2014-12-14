@@ -18,7 +18,7 @@ class AnswersController < ApplicationController
 
   def edit
     @question = Question.find(params[:question_id])
-    @answer = Answer.find(params[:answer_id])
+    @answer = Answer.find(params[:id])
     @page = @question.page
     @book = @page.book
   end
@@ -33,7 +33,7 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    @answer = Answer.find(params[:answer_id])
+    @answer = Answer.find(params[:id])
     @answer.destroy
     redirect_to add_content_to_book_path(id: current_user)
   end
