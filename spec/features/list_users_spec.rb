@@ -9,5 +9,4 @@ describe "Viewing the list of users" do
   it "shows correct number of users" do
     visit '/users'
   end
-  
 end
