@@ -53,6 +53,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def add_content
+    @user = User.find(params[:id])
+    @book = Book.find(params[:book_id])
+  end
+
   private
   def redirect_non_admin_user
     if logged_in?

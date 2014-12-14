@@ -8,9 +8,9 @@ class AnswersController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
-    @answer = @question.answers.new(answer_params)
+    @answer = @question.answers.new(answer_params.merge(user_id: current_user.id))
     if @answer.save(answer_params)
-      redirect_to edit_owned_book_path(id: current_user)
+      redirect_to add_content_to_book_path(id: current_user)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class AnswersController < ApplicationController
   def update
     @answer = Answer.find(params[:id])
     if @answer.update(answer_params)
-      redirect_to edit_owned_book_path(id: current_user)
+      redirect_to add_content_to_book_path(id: current_user)
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer = Answer.find(params[:answer_id])
     @answer.destroy
-    redirect_to edit_owned_book_path(id: current_user)
+    redirect_to add_content_to_book_path(id: current_user)
   end
 
   private
