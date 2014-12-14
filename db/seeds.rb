@@ -35,7 +35,3 @@ b0_p1_q4 = Question.create(title: "Are there values at work in your business tha
 
 
 Answer.delete_all
-OwnedBook.delete_all
-#OwnedBook.create(user_id: u1.id, book_id: b1.id)
-#OwnedBook.create(user_id: u1.id, book_id: b3.id)
-#OwnedBook.create(user_id: u1.id, book_id: b8.id)
