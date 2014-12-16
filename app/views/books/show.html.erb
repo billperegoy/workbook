@@ -12,7 +12,9 @@
     <h1 class="description-page"><%= @book.title %></h1>
     <p><%= @book.description %></p>
     
-    <%= link_to "buy me", add_to_cart_path(@book), class: "btn btn-default", type: "button" %>
+    <% if logged_in? %>
+      <%= link_to "buy me", add_to_cart_path(@book), class: "btn btn-default", type: "button" %>
+    <% end %>
 
     
     <!--<h3>Price: <%= @book.price %></h3>-->
