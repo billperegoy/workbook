@@ -5,12 +5,12 @@
     <!-- add INFO button after question text-->
      
     <% if (question.format == 'list') %>
-      <%= link_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id) %>
+      <%= button_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id), method: :get, remote: true %>
       <%= render partial: 'pages/answer_list', locals: {page: page, question: question} %>
     <% else %>
       <%= render partial: 'pages/answer_single', locals: {page: page, question: question} %>
       <% if question.answers.length != 1 %>
-        <%= link_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id) %>
+        <%= button_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id), method: :get, remote: true %>
       <% end %>
     <% end %>
   <% end %>

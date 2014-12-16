@@ -4,6 +4,11 @@ class AnswersController < ApplicationController
     @answer = Answer.new
     @page = @question.page
     @book = @page.book
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def create
