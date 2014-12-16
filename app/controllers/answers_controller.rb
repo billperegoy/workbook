@@ -26,6 +26,10 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @page = @question.page
     @book = @page.book
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def update
