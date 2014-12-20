@@ -9,10 +9,15 @@ $grey: #888888;
 $orange: #f7931D;
 $lightgrey: rgba(0,0,0,.15);
 $red: #D04D57;
+$yellow: #fffff7;
 
 //typeface variables
 $treb: "Trebuchet MS", Verdana, Sans-serif;
 $tien: "Tienne", Georgia, Serif;
+
+
+//graphic element variables
+$grey-dash: 1px dashed $lightgrey;
 
 
 
@@ -43,6 +48,28 @@ p {
   line-height: 1.9em;
   font-size: 1.3em;
 }
+
+//////////general styles/////////////
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.bg-pink {
+  background-color: $dullpink;
+}
+
+.bg-blue {
+  background-color: $brightblue;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+
+
+
 
 ////////////////logo/////////////
 
@@ -283,10 +310,38 @@ p.exercise-description {
 
 li.question-text {
   margin-bottom: .3em;
+  clear: both;
 }
 
 .question-action-buttons {
-  margin-bottom: 2em;
+  
+}
+
+p.answer-text {
+  font-size: .9em;
+  line-height: 1.5em;
+  font-family: $tien;
+  color: $grey;
+  font-weight: normal;
+}
+
+.answer-control-buttons {
+  border-radius: 10px;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .7em;
+  float: left;
+  margin-bottom: 3em;
+  margin-right: .6em;
+  padding: 0px 5px;
+  font-weight: 200;
+}
+
+
+.answer-control-buttons:hover {
+  opacity: .75;
 }
 
 ////////////////footer/////////////
