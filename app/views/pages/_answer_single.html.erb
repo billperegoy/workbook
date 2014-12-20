@@ -7,7 +7,7 @@
   </p>
 
 <div class="answer-control-buttons-group">  
-  <%= button_to "edit", edit_book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-orange" %> 
+  <%= button_to "edit", edit_book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-orange", method: :get, remote: true %> 
   
   <%= button_to "clear", book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-pink", method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
