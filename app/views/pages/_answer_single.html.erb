@@ -1,7 +1,14 @@
 <div class="question-action-buttons">
+
 <% if (question.answers.length > 0) %>
   <p><%= question.answers[0].value %></p>
-  <%= button_to "edit", edit_book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), method: :get, remote: true %> 
-  <%=button_to 'delete', book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <p class="answer-text">
+    <%= question.answers[0].value %>
+  </p>
+
+<div class="answer-control-buttons-group">  
+  <%= button_to "edit", edit_book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-orange" %> 
+  
+  <%= button_to "clear", book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-pink", method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 </div>
