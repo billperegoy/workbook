@@ -1,17 +1,21 @@
-<h1>My Dashboard</h1>
-<table class='table'>
-<% @user.books.each do |book| %>
-  <tr>
-    <td><%= book.title %></td>
-    <td>
-      <!--
-      <div class="progress">
-        <div class="progress-bar" style="width: <%= @percent_complete %>;"><%= @percent_complete %></div>
-      </div>
-      -->
-    </td>
-    <td><%= render partial: 'dashboard_dropdown', locals: { book: book } %></td>
-  </tr>
-  <% end %>
-</table>
-<%= link_to "Add a book", store_items_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 spacer"></div>
+    <div class="col-md-10">
+      <h1>My Dashboard</h1>    
+      <% @user.books.each do |book| %>
+        <div class="each-book">
+          <h2 class="dashboard-book-title"><%= book.title %></h2>
+          <%= render partial: 'dashboard_dropdown', locals: { book: book } %> 
+        </div><!-- end each book-->  
+      <% end %>
+       
+        
+    <div class="shop-button">
+        <%= link_to "Shop", store_items_path, class: "btn btn-default", type: "button" %>
+    </div> 
+      </div><!-- end md-col-10-->
+     
+      <div class="col-md-1 spacer"></div>
+  </div><!-- end row -->
+</div><!-- end container -->

@@ -207,16 +207,17 @@ description-page-picture-column {
 }
 
 
-
+////////////////buttons/////////////
 
 .btn-default,  {
   background-color: $dullpink;
   font-family: $treb;
   font-weight: 200;
   color: white;
-  letter-spacing: .2em;
-  font-size: 1.2em;
+  letter-spacing: .05em;
+  font-size: .8em;
   border: none;
+  text-shadow: 1px 1px black;
 
 }
 
@@ -225,8 +226,8 @@ description-page-picture-column {
   font-family: $treb;
   font-weight: 200;
   color: white;
-  letter-spacing: .2em;
-  font-size: 1.2em;
+  letter-spacing: .05em;
+  font-size: .8em;
   border: none;
 
 }
@@ -275,6 +276,37 @@ ul.sidebar-list li {
 .portrait {
   float: left;
   padding-right: 10px;
+}
+
+////////////////dashboard/////////////
+.book-control-buttons button  {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.book-control-buttons  {
+float: right;
+
+}  
+
+h2.dashboard-book-title {
+  float: left;
+  text-transform: none;
+  margin-top: 5px;
+}
+
+.shop-button {
+  clear: both;
+  margin-top: 50px;
+}
+
+.each-book {
+  margin-top: 20px;
+  border-bottom: 1px $lightgrey solid;
+  padding-bottom: 35px;
 }
 
 ////////////////book pages/////////////
