@@ -5,6 +5,7 @@
       <h1>My Dashboard</h1>    
       <% @user.books.each do |book| %>
         <div class="each-book">
+          <%= image_tag book.cover_image, class: "dashboard-thumbnail" %>
           <h2 class="dashboard-book-title"><%= book.title %></h2>
           <%= render partial: 'dashboard_dropdown', locals: { book: book } %> 
         </div><!-- end each book-->  

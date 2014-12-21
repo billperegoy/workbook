@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214225054) do
+ActiveRecord::Schema.define(version: 20141221002315) do
 
   create_table "answers", force: true do |t|
     t.datetime "created_at"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141214225054) do
     t.string   "thumbnail"
     t.text     "description"
     t.float    "price"
+    t.string   "cover_image"
   end
 
   create_table "books_users", id: false, force: true do |t|
