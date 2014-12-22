@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141221002315) do
+ActiveRecord::Schema.define(version: 20141222235022) do
 
   create_table "answers", force: true do |t|
     t.datetime "created_at"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 20141221002315) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "format"
+  end
+
+  create_table "slider_questions", force: true do |t|
+    t.string   "left_adjective"
+    t.string   "right_adjective"
+    t.integer  "steps"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

@@ -7,6 +7,7 @@ Workbook::Application.routes.draw do
   # routes I need?
   resources :books do
     resources :pages do
+      resources :slider_questions
       resources :questions do
         resources :answers
       end
