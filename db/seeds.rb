@@ -33,5 +33,9 @@ b0_p1_q2 = Question.create(title: 'Which personal values are already in your bus
 b0_p1_q3 = Question.create(title: "Which personal values that you listed seem out of alignment with your business or don't translate across context? Why do they seem disconnected?", format: 'essay', page_id: b0_p1.id)
 b0_p1_q4 = Question.create(title: "Are there values at work in your business that you don't share personally?", format: 'essay', page_id: b0_p1.id)
 
+SliderQuestion.delete_all
+b0_p2_q1 = SliderQuestion.create(left_adjective: 'cold', right_adjective: 'hot', steps: 3, page_id: b0_p2.id)
+b0_p2_q2 = SliderQuestion.create(left_adjective: 'stuffy', right_adjective: 'hip', steps: 3, page_id: b0_p2.id)
+b0_p2_q3 = SliderQuestion.create(left_adjective: 'square', right_adjective: 'cool', steps: 3, page_id: b0_p2.id)
 
 Answer.delete_all
