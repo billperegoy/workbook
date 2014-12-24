@@ -1,3 +1,16 @@
+<script>
+  //$('#slider-value').html("hello2");
+
+  $('.slider').slider({
+    min: -3,
+    max: 3,
+    step: 1,
+    change: function( event, ui ) {
+      //slider_text = get_slider_text(ui.value);
+      //$('#slider-value').html(slider_text);
+    }
+  });
+</script>
 <div class="exercise-content">
   <h1 class="exercise-title"> 
     <span class="exercise-number">N <span class="super-script">o</span>
@@ -9,4 +22,12 @@
 
   <p class="exercise-description"><%= @page.description %></p>
   <%= render partial: 'pages/question_list', locals: {page: @page} %>
+  <% @page.slider_questions.each do |slider| %>
+    <div class="col-md-4" style="margin-bottom:40px;">
+      <span><%= slider.left_adjective %></span> 
+      <span style="float:right;"><%= slider.right_adjective %></span> 
+      <div class="slider"></div>
+      <div id="slider-value"></div>
+    </div>
+  <% end %>
 </div>

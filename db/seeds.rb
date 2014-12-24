@@ -37,5 +37,10 @@ SliderQuestion.delete_all
 b0_p2_q1 = SliderQuestion.create(left_adjective: 'cold', right_adjective: 'hot', steps: 3, page_id: b0_p2.id)
 b0_p2_q2 = SliderQuestion.create(left_adjective: 'stuffy', right_adjective: 'hip', steps: 3, page_id: b0_p2.id)
 b0_p2_q3 = SliderQuestion.create(left_adjective: 'square', right_adjective: 'cool', steps: 3, page_id: b0_p2.id)
+b0_p2_q3 = SliderQuestion.create(left_adjective: 'local', right_adjective: 'global', steps: 3, page_id: b0_p2.id)
+b0_p2_q4 = SliderQuestion.create(left_adjective: 'personal', right_adjective: 'anonymous', steps: 3, page_id: b0_p2.id)
+b0_p2_q5 = SliderQuestion.create(left_adjective: 'sweet', right_adjective: 'piquant', steps: 3, page_id: b0_p2.id)
+b0_p2_q6 = SliderQuestion.create(left_adjective: 'elegant', right_adjective: 'casual', steps: 3, page_id: b0_p2.id)
+b0_p2_q7 = SliderQuestion.create(left_adjective: 'sophisticated', right_adjective: 'naive', steps: 3, page_id: b0_p2.id)
 
 Answer.delete_all
