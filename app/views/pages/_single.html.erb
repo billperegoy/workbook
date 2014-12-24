@@ -22,12 +22,5 @@
 
   <p class="exercise-description"><%= @page.description %></p>
   <%= render partial: 'pages/question_list', locals: {page: @page} %>
-  <% @page.slider_questions.each do |slider| %>
-    <div class="col-md-4" style="margin-bottom:40px;">
-      <span><%= slider.left_adjective %></span> 
-      <span style="float:right;"><%= slider.right_adjective %></span> 
-      <div class="slider"></div>
-      <div id="slider-value"></div>
-    </div>
-  <% end %>
+  <%= render partial: 'pages/slider_question_list', locals: {page: @page} %>
 </div>

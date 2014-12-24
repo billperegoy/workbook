@@ -1,0 +1,21 @@
+<script>
+  //$('#slider-value').html("hello2");
+
+  $('.slider').slider({
+    min: -3,
+    max: 3,
+    step: 1,
+    change: function( event, ui ) {
+      //slider_text = get_slider_text(ui.value);
+      //$('#slider-value').html(slider_text);
+    }
+  });
+</script>
+<% page.slider_questions.each do |slider| %>
+  <div class="col-md-4" style="margin-bottom:40px;">
+    <span><%= slider.left_adjective %></span> 
+    <span style="float:right;"><%= slider.right_adjective %></span> 
+    <div class="slider"></div>
+    <div id="slider-value"></div>
+  </div>
+<% end %>
