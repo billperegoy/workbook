@@ -1,5 +1,5 @@
 //color variables
-$greenblue: #52c4ba;
+$greenblue: #53c3bb;
 $green: #4a999f;
 $gold: #F7941D;
 $dullpink: #D04D57;
@@ -9,7 +9,7 @@ $grey: #888888;
 $orange: #f7931D;
 $lightgrey: rgba(0,0,0,.15);
 $red: #D04D57;
-$yellow: #fffff7;
+$yellow: ivory;
 
 //typeface variables
 $treb: "Trebuchet MS", Verdana, Sans-serif;
@@ -71,7 +71,7 @@ p {
 
 
 
-////////////////logo/////////////
+////////////shared header/////////////
 
 #logo {
   margin: 0 auto;
@@ -85,7 +85,7 @@ p {
 }
 
 
-////////////////nav/////////////
+//--nav--//
 
 //whole nav bar
 .navbar.navbar-default {
@@ -130,7 +130,7 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 }
 
 
-////////////////log in area/////////////
+//--log in area--//
 
 // pushes it down from top
 .login-area-holder {
@@ -160,12 +160,61 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 
 }
 
+/////////////////modals///////////////
+.modal-content {
+  background-color: $yellow;
+}
 
-////////////////products on home page/////////////
+.modal-header {
+  border: none;
+}
 
+.modal-text-box {
+  font-family: $treb;
+  font-size: 1.5em;
+  height: 1.75em;
+}
+
+.modal-body {
+  padding-bottom: 0;
+}
+
+.modal-footer {
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+////////////////home page/////////////
+
+.hero {
+  h1 {
+    font-family: $tien;
+    color: $grey;
+    font-size: 3.6rem;
+    text-align: center;
+    line-height: 130%;
+    font-weight: 400;
+    padding-top: 10px;
+    border-top: $grey-dash;
+    border-bottom: none;
+    margin-top: 0;
+    letter-spacing: .03em;
+  }
+  
+  h2 {
+    text-align: center;
+    letter-spacing: .25em;
+    padding-bottom: 15px;
+    border-bottom: $grey-dash;
+    margin-top: 20px;
+
+  }
+}  
 
 .product-box {
-	margin: 20px;
+	margin: 0 20px 20px 20px;
 	padding: 5px;
 
 }
