@@ -15,4 +15,7 @@
 //= require jquery-ui
 //= require turbolinks
 //= require bootstrap
+$(document).ready(function(){
+    $('a').tooltip();
+    });
 //= require_tree .

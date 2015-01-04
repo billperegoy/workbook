@@ -9,10 +9,10 @@ u7 = User.create(name: 'Linda Poophead', username: 'linda', password: 'password'
 
 
 Book.delete_all
-b0 = Book.create(title: 'Know Your Brand', cover_image: '473x600xknow-your-brand-book.jpg', thumbnail: 'know-your-brand-class1-300x300.png', description: Forgery(:lorem_ipsum).words(300), price: 50.00)
-b1 = Book.create(title: 'Tagline Workshop', cover_image: '473x600xknow-your-brand-book.jpg',thumbnail: 'tagline-workbook-300x300.png', description: 'Tagline Workbook', price: 50.00)
-b2 = Book.create(title: '1 To 1', cover_image: '473x600xknow-your-brand-book.jpg', thumbnail: '1to1-300x300.png', description: '1 To 1', price: 50.00)
-b3 = Book.create(title: 'Learn Live', cover_image: '473x600xknow-your-brand-book.jpg', thumbnail: 'learn-live-300x300.png', description: 'Learn Live', price: 50.00)
+b0 = Book.create(title: 'Know Your Brand', cover_image: '473x600xknow-your-brand-book.jpg', tile_image: 'know-your-brand-class1-300x300.png', description: Forgery(:lorem_ipsum).words(300), price: 50.00)
+b1 = Book.create(title: 'Tagline Workshop', cover_image: '473x600xknow-your-brand-book.jpg',tile_image: 'tagline-workbook-300x300.png', description: 'Tagline Workbook', price: 50.00)
+b2 = Book.create(title: '1 To 1', cover_image: '473x600xknow-your-brand-book.jpg', tile_image: '1to1-300x300.png', description: '1 To 1', price: 50.00)
+b3 = Book.create(title: 'Learn Live', cover_image: '473x600xknow-your-brand-book.jpg', tile_image: 'learn-live-300x300.png', description: 'Learn Live', price: 50.00)
 
 Page.delete_all
 b0_p0 = Page.create(number: 1, title: 'The Starting Place', description: "Your starting place may be..." + Forgery(:lorem_ipsum).words(300), book_id: b0.id)
