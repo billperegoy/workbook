@@ -1,0 +1,46 @@
+<%= form_for(@user) do |f| %>
+  <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signup-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <p>
+            <%= f.label :username %><br/>
+            <%= f.text_field :username, class: 'form-control' %>
+          </p>
+          <p>
+            <%= f.label "What should we call you?" %><br/>
+            <%= f.text_field :name, class: 'form-control' %>
+          </p>
+          <p>
+            <%= f.label :password %><br/>
+            <%= f.text_field :password, class: 'form-control' %>
+          </p>
+          <p>
+            <%= f.label :password_confirmation %><br/>
+            <%= f.text_field :password_confirmation, class: 'form-control' %>
+          </p>
+          <p>
+            <%= f.label :email %><br/>
+            <%= f.text_field :email, class: 'form-control' %>
+          </p>
+          <p>
+            <%= f.hidden_field :role, :value => 'user' %>
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <p>
+            <%= f.submit "Create User", class: "btn btn-default" %>
+          </p>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

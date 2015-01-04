@@ -21,7 +21,7 @@
 
         <% else %>
           <div class="not-logged-in">
-            <span class="log-in-out-button"><a href="#">sign up</a></span>
+            <span class="log-in-out-button"><%= link_to 'sign up', new_user_path, remote: true %></span>
             <span>&nbsp;|&nbsp;</span>
             <span class="log-in-out-button"><%= link_to "log in", login_path, remote: true %></span>
             </div><!-- end not logged in -->
