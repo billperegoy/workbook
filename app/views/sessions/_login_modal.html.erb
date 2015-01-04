@@ -5,17 +5,14 @@
 
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="login-modal-label">Please Log In</h4>
         </div>
 
         <div class="modal-body">
             <p>
-              <%= f.label :username %></br>
-              <%= f.text_field :username, class: 'form-control' %>
+              <%= f.text_field :username, :placeholder => "your user name", class: 'form-control modal-text-box' %>
             </p>
             <p>
-              <%= f.label :password %></br>
-              <%= f.text_field :password, class: 'form-control' %>
+              <%= f.text_field :password, :placeholder => "your password", class: 'form-control modal-text-box' %>
             </p>
         </div>
 

@@ -1,3 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="hero">
+      <h1>High-end how-to’s for branding, design,  <br> business strategy, and creative problem solving.</h1>
+      <h2>{HELPING INDIE BUSINESSES DIY THE STUFF THAT USUALLY COSTS A BOATLOAD.}</h2>
+    </div><!-- end hero-->
+  </div><!-- end row -->
+</div><!-- end container -->
+
 <div class="container">	
   <% @books.in_groups_of(4) do |row| %>
     <%= render partial: 'single_row', locals: { row: row } %>
