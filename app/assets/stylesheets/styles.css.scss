@@ -68,8 +68,39 @@ p {
 }
 
 
+////////////////buttons/////////////
 
+.btn-default,  {
+  background-color: $dullpink;
+  font-family: $treb;
+  font-weight: 200;
+  color: white;
+  letter-spacing: .05em;
+  font-size: .8em;
+  border: none;
+  text-shadow: 1px 1px black;
 
+}
+
+.btn-default:hover {
+  background-color: $orange ;
+  font-family: $treb;
+  font-weight: 200;
+  color: white;
+  letter-spacing: .05em;
+  font-size: .8em;
+  border: none;
+
+}
+
+a.read-more {
+  color: $brightpink;
+  text-decoration: none;
+} 
+
+a.read-more:hover {
+  color: $orange;
+}
 
 ////////////shared header/////////////
 
@@ -186,6 +217,57 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 }
 
 
+///////////////sidebars////////////////
+
+.sidebar-box {
+  border: 1pt $orange dashed;
+  margin: 0 25px;
+  background-color: #fffff7; 
+}
+
+h3.sidebar-title {
+  color: white;
+  text-transform: uppercase;
+  font-family: $treb;
+  background-color: $greenblue;
+  margin-top: 0;
+  font-size: 1.3em;
+  padding: 5px;
+  letter-spacing: .1em;
+}
+
+p.sidebar-intro {
+  padding: 0 5% 0 5%;
+  font-size: 1.1em;
+  color: $red;
+  font-family: $treb;
+  line-height: 1.5em;
+}
+
+
+ul.sidebar-list {
+  list-style-position: outside;
+  font-size: 1.1em;
+  font-family: $treb;
+  line-height: 1.5em;
+  padding: 0 10% 10% 0;
+  margin-left: 11%;
+  color: #8a8282;
+    a {
+      color: $grey;
+    }
+    
+    a:hover {
+      color: $orange;
+      text-decoration: none;
+    }
+}
+
+ul.sidebar-list li {
+  padding-bottom: 10px;
+}
+
+
 ////////////////home page/////////////
 
 .hero {
@@ -232,7 +314,7 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 }
 
 
-////////////////description page/////////////
+////////////////description pages/////////////
 
 .description-page-picture img {
   width: 300px;
@@ -256,78 +338,16 @@ description-page-picture-column {
 }
 
 
-////////////////buttons/////////////
 
-.btn-default,  {
-  background-color: $dullpink;
-  font-family: $treb;
-  font-weight: 200;
-  color: white;
-  letter-spacing: .05em;
-  font-size: .8em;
-  border: none;
-  text-shadow: 1px 1px black;
 
-}
-
-.btn-default:hover {
-  background-color: $orange ;
-  font-family: $treb;
-  font-weight: 200;
-  color: white;
-  letter-spacing: .05em;
-  font-size: .8em;
-  border: none;
-
-}
 
 ////////////////static pages/////////////
-.sidebar-box {
-  border: 1pt $orange dashed;
-  margin: 0 25px;
-  background-color: #fffff7; 
-}
-
-h3.sidebar-title {
-  color: white;
-  text-transform: uppercase;
-  font-family: $treb;
-  background-color: $greenblue;
-  margin-top: 0;
-  font-size: 1.3em;
-  padding: 5px;
-  letter-spacing: .1em;
-}
-
-p.sidebar-intro {
-  padding: 0 5% 0 5%;
-  font-size: 1.1em;
-  color: $red;
-  font-family: $treb;
-  line-height: 1.5em;
-}
-
-
-ul.sidebar-list {
-  list-style-position: outside;
-  font-size: 1.1em;
-  font-family: $treb;
-  line-height: 1.5em;
-  padding: 0 10% 10% 0;
-  margin-left: 11%;
-  color: #8a8282;
-}
-
-ul.sidebar-list li {
-  padding-bottom: 10px;
-}
-
 .portrait {
   float: left;
   padding-right: 10px;
 }
 
-////////////////dashboard/////////////
+////////////////dashboard page/////////////
 .book-control-buttons button  {
   float: left;
   width: 100%;
@@ -431,6 +451,8 @@ p.answer-text {
 .answer-control-buttons:hover {
   opacity: .75;
 }
+
+
 
 ////////////////footer/////////////
 

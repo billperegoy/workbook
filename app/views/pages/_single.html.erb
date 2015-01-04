@@ -11,6 +11,7 @@
     }
   });
 </script>
+
 <div class="exercise-content">
   <h1 class="exercise-title"> 
     <span class="exercise-number">N <span class="super-script">o</span>
@@ -20,7 +21,9 @@
     <%= @page.title %>
   </h1>
 
-  <p class="exercise-description"><%= @page.description %></p>
+  <p class="exercise-description"><%= truncate(@page.description, length: 300, separator: " ") %>
+  <a href="#" class="read-more">read more</a></p>
+
+</div>
   <%= render partial: 'pages/question_list', locals: {page: @page} %>
   <%= render partial: 'pages/slider_question_list', locals: {page: @page} %>
-</div>
