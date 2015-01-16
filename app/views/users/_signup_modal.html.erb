@@ -9,24 +9,19 @@
 
         <div class="modal-body">
           <p>
-            <%= f.label :username %><br/>
-            <%= f.text_field :username, class: 'form-control' %>
+            <%= f.text_field :username, :placeholder => "your desired user name", class: 'form-control modal-text-box', id: 'login-username'  %>
           </p>
           <p>
-            <%= f.label "What should we call you?" %><br/>
-            <%= f.text_field :name, class: 'form-control' %>
+            <%= f.text_field :name, :placeholder => "What should we call you?", class: 'form-control modal-text-box', id: 'screen-name'  %>          </p>
+          <p>
+            <%= f.text_field :password, :placeholder => "your desired password", class: 'form-control modal-text-box', id: 'login-password' %>
           </p>
           <p>
-            <%= f.label :password %><br/>
-            <%= f.text_field :password, class: 'form-control' %>
+            <%= f.text_field :password_confirmation, :placeholder => "confirm your password", class: 'form-control modal-text-box', id: 'login-password' %>
           </p>
           <p>
-            <%= f.label :password_confirmation %><br/>
-            <%= f.text_field :password_confirmation, class: 'form-control' %>
-          </p>
-          <p>
-            <%= f.label :email %><br/>
-            <%= f.text_field :email, class: 'form-control' %>
+            <%= f.text_field :email, :placeholder => "your email", class: 'form-control modal-text-box', id: 'user-email' %>
+
           </p>
           <p>
             <%= f.hidden_field :role, :value => 'user' %>
@@ -35,7 +30,7 @@
 
         <div class="modal-footer">
           <p>
-            <%= f.submit "Create User", class: "btn btn-default" %>
+            <%= f.submit "Set me up!", class: "btn btn-default" %>
           </p>
           </p>
         </div>

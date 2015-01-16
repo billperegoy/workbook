@@ -8,6 +8,8 @@ gem 'sqlite3', group: :development
 
 gem 'forgery'
 
+gem 'font-awesome-sass'
+
 group :production do
   gem 'pg'
   gem 'unicorn'

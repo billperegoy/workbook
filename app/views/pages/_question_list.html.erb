@@ -1,16 +1,37 @@
 <ol class="question">
   <% page.questions.each do |question| %>
-    <li class="question-text"><%= question.title %></li> 
-    
-    <!-- add INFO button after question text-->
-     
+    <li class="question-text"><%= question.title %>
+      &nbsp;<a href="#"><span class="info fa fa-info-circle fa-lg"></span></a>
+    </li> 
+
+<!-- single line answer -->    
+<input type="text" class="form-control single-line-answer">
+
+<!-- multi-line answer -->    
+<textarea class="form-control multi-line-answer" rows="3"></textarea>
+
+<!-- list answer-->
+<input type="text" class="form-control list-answer">
+  <span class="list-control-buttons">
+    &nbsp;
+    <a href="#"><i class ="fa fa-check-circle-o fa-lg" data-toggle="tooltip" data-placement="top" title="save"></i></a>
+    <a href="#"><i class ="fa fa-trash-o fa-lg" data-toggle="tooltip" data-placement="top" title="delete"></i></a>
+    <a href="#"><i class ="fa fa-plus-circle fa-lg" data-toggle="tooltip" data-placement="top" title="add another"></i></a>
+  </span> 
+
+
+  
     <% if (question.format == 'list') %>
-      <%= button_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id), method: :get, remote: true %>
+
+
+
+
+      <!-- <%= button_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id), method: :get, remote: true %> -->
       <%= render partial: 'pages/answer_list', locals: {page: page, question: question} %>
     <% else %>
       <%= render partial: 'pages/answer_single', locals: {page: page, question: question} %>
       <% if question.answers.length != 1 %>
-        <%= button_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id), method: :get, remote: true %>
+<!--         <%= button_to "add answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id), method: :get, remote: true %> -->
       <% end %>
     <% end %>
   <% end %>
