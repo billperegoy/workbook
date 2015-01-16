@@ -112,6 +112,12 @@ a.read-more:hover {
   color: $orange;
 }
 
+.contact-form-button, .contact-form-button:hover{
+  float: right;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
 ////////////shared header/////////////
 
 #logo {
@@ -229,6 +235,7 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 
 ///////////////sidebars////////////////
 
+/*
 .sidebar-box {
   border: 1pt $orange dashed;
   margin: 0 25px;
@@ -253,15 +260,16 @@ p.sidebar-intro {
   font-family: $treb;
   line-height: 1.5em;
 }
+*/
 
 
-ul.sidebar-list {
+ol.sidebar-list {
   list-style-position: outside;
   font-size: 1.1em;
   font-family: $treb;
-  line-height: 1.5em;
-  padding: 0 10% 10% 0;
-  margin-left: 11%;
+  line-height: 2em;
+  padding: 0 10% 10px 65px;
+  margin: 0;
   color: #8a8282;
     a {
       color: $grey;
@@ -273,9 +281,11 @@ ul.sidebar-list {
     }
 }
 
+/*
 ul.sidebar-list li {
   padding-bottom: 10px;
 }
+*/
 
 
 ////////////////home page/////////////
@@ -357,7 +367,10 @@ description-page-picture-column {
   padding-right: 10px;
 }
 
+
+
 ////////////////dashboard page/////////////
+/*
 .book-control-buttons button  {
   float: left;
   width: 100%;
@@ -370,6 +383,7 @@ description-page-picture-column {
 float: right;
 
 }  
+*/
 
 h2.dashboard-book-title {
 
@@ -397,7 +411,26 @@ h2.dashboard-book-title {
 
 }
 
-.list-group.full-book-actions a.list-group-item, .list-group.full-book-actions h2.dashboard-book-title.list-group-item:first-child {
+
+
+
+
+.dashboard-thumbnail {
+  width: 40%;
+  float: left;
+  margin: 5px 0 0 9px;
+}
+
+.full-book-actions {
+  float: left;
+}
+
+
+/////////////actions menus/////////////
+.list-group.full-book-actions a.list-group-item, 
+.list-group.full-book-actions h2.dashboard-book-title.list-group-item:first-child,
+.list-group.page-actions a.list-group-item
+ {
   border: none;
 }
 
@@ -413,16 +446,57 @@ h2.dashboard-book-title {
     }
 }
 
-
-
-.dashboard-thumbnail {
-  width: 40%;
-  float: left;
-  margin: 5px 0 0 9px;
+.list-group.page-actions {
+  border: 1pt $brightpink solid;
+  border-radius: 5px;
+  font-family: $treb;
+  letter-spacing: .05em;
+    a.list-group-item:hover, a.list-group-item:focus {
+      background-color: $orange;
+      color: white;
+    }
 }
 
-.full-book-actions {
+.print-actions {
+  border-top: 1pt $brightpink solid;
+}
+
+.previous {
   float: left;
+  background-color: transparent;
+}
+
+a.list-group-item.previous {
+  border-top-right-radius: 0px;
+  padding-right: 36px;
+}
+
+a.list-group-item.next {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.next {
+  float: right;
+  background-color: transparent;
+}
+
+a.list-group-item.next {
+  padding-left: 50px;
+}
+
+
+.prev-next {
+    overflow: auto;
+    border-bottom: 1pt $brightpink solid;
+
+}
+
+.skip {
+  clear: both;
+  border: none;
 }
 
 ////////////////book pages/////////////

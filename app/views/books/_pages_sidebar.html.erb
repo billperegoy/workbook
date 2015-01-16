@@ -1,8 +1,33 @@
-<div class="sidebar-box">
-  <h3 class="sidebar-title">Pages in this Book</h3>
-  <ul class="sidebar-list">
+<div class="list-group page-actions">
+    
+  <div class="prev-next">  
+    <%= link_to '<span class="fa fa-arrow-left fa-fw"></span>&nbsp;Previous page'.html_safe, "#", class: "list-group-item previous" %> 
+   
+    <%= link_to 'Next page&nbsp;<span class="fa fa-arrow-right fa-fw"></span>'.html_safe, "#", class: "list-group-item next" %> 
+  </div>
+  
+   <div class="list-group-item skip"><span class="fa fa-chevron-down fa-fw"></span>&nbsp;Skip to another page in this book:</div> 
+   
+    
+ <ol class="sidebar-list">
     <% @book.pages.each do |page| %>
       <li><%= link_to page.title, book_page_path(@book, page), remote: true%></li>
     <% end %>
-  </ul>
+  </ol>
+  
+  
+  <div class="print-actions">
+    <%= link_to '<span class="fa fa-file-text-o fa-fw"></span>&nbsp;Print my work on this page'.html_safe, "#", class: "list-group-item" %>
+    <%= link_to '<span class="fa fa-file-o fa-fw"></span>&nbsp;Print out a blank copy of this page'.html_safe, "#", class: "list-group-item" %> 
+  </div><!-- end print actions -->  
+  
+
+  
+  
 </div>
+
+
+
+
+<!--<div class="sidebar-box">
+  <h3 class="sidebar-title">Pages in this Book</h3>-->
