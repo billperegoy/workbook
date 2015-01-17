@@ -1,5 +1,12 @@
 <script>
   //$('#slider-value').html("hello2");
+  $("#read-more").click(function(){
+    alert('read more');
+  });
+
+  $("#read-less").click(function(){
+    alert('read less');
+  });
 
   $('.slider').slider({
     min: -3,
@@ -21,9 +28,29 @@
     <%= @page.title %>
   </h1>
 
-  <p class="exercise-description"><%= truncate(@page.description, length: 300, separator: " ") %>
-  <a href="#" class="read-more">read more</a></p>
+  <div class="exercise-description-truncated">
+    <p class="exercise-description"><%= truncate(@page.description, length: 300, separator: " ") %>
+    <span class="read-more">read more</span></p>
+  </div>
+
+  <div class="exercise-description-full">
+    <p class="exercise-description"><%= @page.description %>
+    <span class="read-less">read less</span></p>
+  </div>
 
 </div>
   <%= render partial: 'pages/question_list', locals: {page: @page} %>
   <%= render partial: 'pages/slider_question_list', locals: {page: @page} %>
+
+<script>
+  $(".read-more").click(function(){
+    $(".exercise-description-truncated").hide();
+    $(".exercise-description-full").show();
+  });
+
+  $(".read-less").click(function(){
+    $(".exercise-description-full").hide();
+    $(".exercise-description-truncated").show();
+  });
+</script>
+

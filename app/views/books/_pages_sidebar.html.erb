@@ -1,29 +1,44 @@
 <div class="list-group page-actions">
-    
-  <div class="prev-next">  
-    <%= link_to '<span class="fa fa-arrow-left fa-fw"></span>&nbsp;Previous page'.html_safe, "#", class: "list-group-item previous" %> 
-   
-    <%= link_to 'Next page&nbsp;<span class="fa fa-arrow-right fa-fw"></span>'.html_safe, "#", class: "list-group-item next" %> 
+
+  <div class="prev-next">
+    <%= link_to '<span class="fa fa-arrow-left fa-fw"></span>&nbsp;Previous page'.html_safe, "#", class: "list-group-item previous" %>
+
+    <%= link_to 'Next page&nbsp;<span class="fa fa-arrow-right fa-fw"></span>'.html_safe, "#", class: "list-group-item next" %>
   </div>
-  
-   <div class="list-group-item skip"><span class="fa fa-chevron-down fa-fw"></span>&nbsp;Skip to another page in this book:</div> 
-   
-    
- <ol class="sidebar-list">
-    <% @book.pages.each do |page| %>
-      <li><%= link_to page.title, book_page_path(@book, page), remote: true%></li>
-    <% end %>
-  </ol>
-  
-  
+
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#page-list-collapse" aria-expanded="true" aria-controls="page-list-collapse">
+            <div class="list-group-item skip"><span class="fa fa-chevron-down fa-fw"></span>&nbsp;Skip to another page in this book:</div>
+          </a>
+        </h4>
+      </div> <!-- panel-heading -->
+
+      <div id="page-list-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+
+          <ol class="sidebar-list">
+            <% @book.pages.each do |page| %>
+              <li><%= link_to page.title, book_page_path(@book, page), remote: true%></li>
+            <% end %>
+          </ol>
+        </div> <!-- panel-body -->
+      </div>
+    </div>
+  </div>
+
+
   <div class="print-actions">
     <%= link_to '<span class="fa fa-file-text-o fa-fw"></span>&nbsp;Print my work on this page'.html_safe, "#", class: "list-group-item" %>
-    <%= link_to '<span class="fa fa-file-o fa-fw"></span>&nbsp;Print out a blank copy of this page'.html_safe, "#", class: "list-group-item" %> 
-  </div><!-- end print actions -->  
-  
+    <%= link_to '<span class="fa fa-file-o fa-fw"></span>&nbsp;Print out a blank copy of this page'.html_safe, "#", class: "list-group-item" %>
+  </div><!-- end print actions -->
 
-  
-  
+
+
+
 </div>
 
 
