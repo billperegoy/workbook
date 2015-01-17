@@ -103,9 +103,10 @@ p {
 
 }
 
-a.read-more {
+.read-more, .read-less {
   color: $brightpink;
   text-decoration: none;
+  cursor: pointer;
 } 
 
 a.read-more:hover {
@@ -518,6 +519,13 @@ a.list-group-item.next {
 p.exercise-description {
   font-size: 1.1em;
   line-height: 1.5em;
+}
+
+.exercise-description-full {
+  display: none;
+}
+
+.exercise-description-truncated {
 }
 
 .question {
