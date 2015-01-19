@@ -1,36 +1,37 @@
 <ol class="question">
   <% page.questions.each do |question| %>
-    <% @answer = question.answers.new %>
     <li class="question-text"><%= question.title %>
       &nbsp;<a href="#"><span class="info fa fa-info-circle fa-lg"></span></a>
     </li> 
 
     <% if (question.format == 'list') %>
-      <%= form_for @answer, url:  book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
+      <%= form_for question.answers.new, url: book_page_question_answers_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
         <%= f.text_field :value, class: "form-control list-answer" %>
-        <span class="list-control-buttons">
-          &nbsp;
-          <a href="#"><i class ="fa fa-check-circle-o fa-lg" data-toggle="tooltip" data-placement="top" title="save"></i></a>
-          <a href="#"><i class ="fa fa-trash-o fa-lg" data-toggle="tooltip" data-placement="top" title="delete"></i></a>
-          <a href="#"><i class ="fa fa-plus-circle fa-lg" data-toggle="tooltip" data-placement="top" title="add another"></i></a>
-        </span> 
+        <%= render partial: 'list_icons' %>
         <%= f.submit "save" %>
       <% end %>
-      <%# = render partial: 'pages/answer_list', locals: {page: page, question: question} %>
+      <%= render partial: 'pages/answer_list', locals: {page: page, question: question} %>
 
     <% elsif question.format == 'essay' %>
-      <%= form_for @answer, url:  book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
-        <%= f.text_area :value, class: "form-control multi-line-answer" %>
-        <%= f.submit "save"%>
+      <% if question.answers.empty? %>
+        <%= form_for question.answers.new, url: book_page_question_answers_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
+          <%= f.text_area :value, class: "form-control multi-line-answer" %>
+          <%= f.submit "save"%>
+        <% end %>
+      <% else %>
+        <%= render partial: 'pages/answer_single', locals: {book: page.book, page: page, question: question} %>
       <% end %>
 
     <% else %>
-      <%= form_for @answer, url:  book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
-        <%= f.text_field :value, class: "form-control single-line-answer" %>
-        <%= f.submit "save" %>
-      <% end %>
+      <% if question.answers.empty? %>
+        <%= form_for question.answers.new, url: book_page_question_answers_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
+          <%= f.text_field :value, class: "form-control single-line-answer" %>
+          <%= f.submit "save" %>
+        <% end %>
 
-      <%#= render partial: 'pages/answer_single', locals: {page: page, question: question} %>
+      <% else %>
+        <%= render partial: 'pages/answer_single', locals: {book: page.book, page: page, question: question} %>
+      <% end %>
 
       <% if question.answers.empty? %>
         <%= link_to "add_answer", new_book_page_question_answer_path(page_id: page.id, question_id: question.id) %>

@@ -4,8 +4,8 @@
 
     <div class="col-md-7">
       <div id="single-page-wrapper">
-        <% @page = @book.pages[0] %>
-        <%= render partial: 'pages/single', locals: {page: @book.pages[0]} %>
+        <% @page = @page %>
+        <%= render partial: 'pages/single', locals: {page: @page} %>
       </div>
     </div>
 
