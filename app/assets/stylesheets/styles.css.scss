@@ -236,57 +236,7 @@ ul.nav.navbar-nav li a:hover, ul.nav.navbar-nav li.active a:hover {
 
 ///////////////sidebars////////////////
 
-/*
-.sidebar-box {
-  border: 1pt $orange dashed;
-  margin: 0 25px;
-  background-color: #fffff7; 
-}
 
-h3.sidebar-title {
-  color: white;
-  text-transform: uppercase;
-  font-family: $treb;
-  background-color: $greenblue;
-  margin-top: 0;
-  font-size: 1.3em;
-  padding: 5px;
-  letter-spacing: .1em;
-}
-
-p.sidebar-intro {
-  padding: 0 5% 0 5%;
-  font-size: 1.1em;
-  color: $red;
-  font-family: $treb;
-  line-height: 1.5em;
-}
-*/
-
-
-ol.sidebar-list {
-  list-style-position: outside;
-  font-size: 1.1em;
-  font-family: $treb;
-  line-height: 2em;
-  padding: 0 10% 10px 65px;
-  margin: 0;
-  color: #8a8282;
-    a {
-      color: $grey;
-    }
-    
-    a:hover {
-      color: $orange;
-      text-decoration: none;
-    }
-}
-
-/*
-ul.sidebar-list li {
-  padding-bottom: 10px;
-}
-*/
 
 
 ////////////////home page/////////////
@@ -371,23 +321,8 @@ description-page-picture-column {
 
 
 ////////////////dashboard page/////////////
-/*
-.book-control-buttons button  {
-  float: left;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.book-control-buttons  {
-float: right;
-
-}  
-*/
 
 h2.dashboard-book-title {
-
   text-transform: none;
   margin-top: 5px;
 }
@@ -427,7 +362,7 @@ h2.dashboard-book-title {
 }
 
 
-/////////////actions menus/////////////
+/////actions menus (sidebars and eleswhere)/////////
 .list-group.full-book-actions a.list-group-item, 
 .list-group.full-book-actions h2.dashboard-book-title.list-group-item:first-child,
 .list-group.page-actions a.list-group-item
@@ -452,10 +387,18 @@ h2.dashboard-book-title {
   border-radius: 5px;
   font-family: $treb;
   letter-spacing: .05em;
-    a.list-group-item:hover, a.list-group-item:focus {
+    a.list-group-item:hover, a.list-group-item:focus, .list-group-item.skip:hover {
       background-color: $orange;
       color: white;
     }
+}
+
+.list-group-item.skip:link,
+.list-group-item.skip:visited,
+.list-group-item.skip:hover,
+.list-group-item.skip:active {
+    text-decoration: none;
+
 }
 
 .print-actions {
@@ -499,6 +442,60 @@ a.list-group-item.next {
   clear: both;
   border: none;
 }
+
+
+ol.sidebar-list {
+  list-style-position: outside;
+  font-size: 1.1em;
+  font-family: $treb;
+  line-height: 2em;
+  padding: 0 10% 10px 65px;
+  margin: 0;
+  color: #8a8282;
+    a {
+      color: $grey;
+    }
+    
+    a:hover {
+      color: $orange;
+      text-decoration: none;
+    }
+}
+
+.list-group-item.skip {
+  font-family: $treb;
+  font-size: 14px;
+}
+
+/*takes away space that was revealing grey on unknown item behind panel group*/
+.panel-group {
+  margin-bottom: 0;
+}
+
+
+/*removes grey background behind title*/
+.panel-heading {
+  padding: 0;
+  border-style: none;
+  border-color: none;
+  background-color: transparent;
+}
+
+
+/*selects only .panel-bodies that are directdescendents of .panel-collapses next to .panel-headings -- removes line above list when accordion is open -- which is probably actually the line below the title*/ 
+.panel-group .panel-heading + .panel-collapse > .panel-body {
+  border: none;
+}
+
+/*gets rid of another faint border around panels*/
+.panel {
+  border: none;
+  box-shadow: none;
+}
+
+
+
+
 
 ////////////////book pages/////////////
 .exercise-number {
