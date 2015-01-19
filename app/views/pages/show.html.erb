@@ -1,12 +1,19 @@
-<div class="exercise-content">
-  <h1 class="exercise-title"> 
-    <span class="exercise-number">N <span class="super-script">o</span>
-      <%= @page.number %> 
-      <span class="guillemet">&raquo; </span>
-    </span>  
-    <%= @page.title %>
-  </h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 spacer"></div>
 
-  <p class="exercise-description"><%= @page.description %></p>
-  <%= render partial: 'owned_books/question_list', locals: {page: @page} %>
-</div><!-- end exercise content-->
+    <div class="col-md-7">
+      <div id="single-page-wrapper">
+        <% @page = @book.pages[0] %>
+        <%= render partial: 'pages/single', locals: {page: @book.pages[0]} %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <%= render partial: 'pages_sidebar' %>
+    </div>
+
+    <div class="col-md-1 spacer">
+  </div>
+</div>
+<div id="answer-modal-wrapper"></div>

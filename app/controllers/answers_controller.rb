@@ -14,8 +14,11 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params.merge(user_id: current_user.id))
+    @page = @question.page
+    @book = @page.book
+
     if @answer.save(answer_params)
-      redirect_to add_content_to_book_path(id: current_user)
+      redirect_to book_page_path(@book, @page)
     else
       render :new
     end
@@ -34,9 +37,14 @@ class AnswersController < ApplicationController
 
   def update
     @answer = Answer.find(params[:id])
+    @question = @answer.question
+    @page = @question.page
+    @book = @page.book
     if @answer.update(answer_params)
-      redirect_to add_content_to_book_path(id: current_user)
+      redirect_to book_page_path(@book, @page)
     else
+    @page = @question.page
+    @book = @page.book
       render :edit
     end
   end
@@ -44,7 +52,10 @@ class AnswersController < ApplicationController
   def destroy
     @answer = Answer.find(params[:id])
     @answer.destroy
-    redirect_to add_content_to_book_path(id: current_user)
+    @question = @answer.question
+    @page = @question.page
+    @book = @page.book
+    redirect_to book_page_path(@book, @page)
   end
 
   private

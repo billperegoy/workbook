@@ -25,7 +25,7 @@ b0_p6 = Page.create(number: 7, title: 'Out of Names Page', description: Forgery(
 
 Question.delete_all
 b0_p0_q0 = Question.create(title: 'My business name (or working title)', format: 'item', page_id: b0_p0.id)
-b0_p0_q1 = Question.create(title: 'What do you want to get out of this process of branding? (Goals, questions to answer, expresions of existential angst...)', format: 'item', page_id: b0_p0.id)
+b0_p0_q1 = Question.create(title: 'What do you want to get out of this process of branding? (Goals, questions to answer, expresions of existential angst...)', format: 'essay', page_id: b0_p0.id)
 
 b0_p1_q0 = Question.create(title: 'I do this work because (try to list at least 5 reasons)', format: 'list', page_id: b0_p1.id)
 b0_p1_q1 = Question.create(title: 'What are the personal values that I feel most strongly about? (List as many as you want.', format: 'list', page_id: b0_p1.id)

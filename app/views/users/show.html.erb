@@ -2,47 +2,47 @@
   <div class="row">
     <div class="col-md-1 spacer"></div>
     <div class="col-md-10">
-      
-              
-      
+
+
+
       <div class="col-md-12 no-pad">
         <h1>My Stuff
           <div class="shop-button">
             <%= link_to "Shop", store_items_path, class: "btn btn-default", type: "button" %></div>
         </h1></div>
-     
-    
+
+
       <% @user.books.each do |book| %>
         <div class="each-book col-md-4">
           <div class="each-book-border">
           <%= image_tag book.cover_image, class: "dashboard-thumbnail" %>
-         
+
           <div class="list-group full-book-actions">
             <h2 class="dashboard-book-title list-group-item"><%= book.title %></h2>
-            
-            
-              <%= link_to '<span class="fa fa-edit fa-fw"></span>&nbsp;Work on this book'.html_safe, add_content_to_book_path(book_id: book.id), class: "list-group-item" %>
-            
+
+
+              <%= link_to '<span class="fa fa-edit fa-fw"></span>&nbsp;Work on this book'.html_safe, book_page_path(book, book.pages.first), class: "list-group-item" %>
+
               <%= link_to '<span class="fa fa-file-text-o fa-fw"></span>&nbsp;Print my work'.html_safe, "#", class: "list-group-item" %>
 
-              <%= link_to '<span class="fa fa-file-o fa-fw"></span>&nbsp;Print out a blank copy'.html_safe, "#", class: "list-group-item" %>   
-            
-           
-          </div> 
+              <%= link_to '<span class="fa fa-file-o fa-fw"></span>&nbsp;Print out a blank copy'.html_safe, "#", class: "list-group-item" %>
+
+
+          </div>
           </div><!-- end each book border-->
-        </div><!-- end each book-->  
+        </div><!-- end each book-->
       <% end %>
-       
-    </div>        
-    
-    </div><!-- end col-md-10-->   
+
+    </div>
+
+    </div><!-- end col-md-10-->
     <div class="col-md-1 spacer"></div>
   </div>
 </div>
 
-    
 
-     
+
+
       <div class="col-md-1 spacer"></div>
   </div><!-- end row -->
 </div><!-- end container -->
