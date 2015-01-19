@@ -8,26 +8,26 @@
     <% if (question.format == 'list') %>
       <%= form_for @answer, url:  book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
         <%= f.text_field :value, class: "form-control list-answer" %>
-        <%= f.submit %>
-      <% end %>
         <span class="list-control-buttons">
           &nbsp;
           <a href="#"><i class ="fa fa-check-circle-o fa-lg" data-toggle="tooltip" data-placement="top" title="save"></i></a>
           <a href="#"><i class ="fa fa-trash-o fa-lg" data-toggle="tooltip" data-placement="top" title="delete"></i></a>
           <a href="#"><i class ="fa fa-plus-circle fa-lg" data-toggle="tooltip" data-placement="top" title="add another"></i></a>
         </span> 
+        <%= f.submit "save" %>
+      <% end %>
       <%# = render partial: 'pages/answer_list', locals: {page: page, question: question} %>
 
     <% elsif question.format == 'essay' %>
       <%= form_for @answer, url:  book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
         <%= f.text_area :value, class: "form-control multi-line-answer" %>
-        <%= f.submit %>
+        <%= f.submit "save"%>
       <% end %>
 
     <% else %>
       <%= form_for @answer, url:  book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
         <%= f.text_field :value, class: "form-control single-line-answer" %>
-        <%= f.submit %>
+        <%= f.submit "save" %>
       <% end %>
 
       <%#= render partial: 'pages/answer_single', locals: {page: page, question: question} %>
