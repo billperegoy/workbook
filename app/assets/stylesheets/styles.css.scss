@@ -78,6 +78,10 @@ p {
 
 }
 
+a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
 ////////////////buttons/////////////
 
 .btn-default,  {
@@ -393,50 +397,78 @@ h2.dashboard-book-title {
     }
 }
 
-.list-group-item.skip:link,
 .list-group-item.skip:visited,
 .list-group-item.skip:hover,
 .list-group-item.skip:active {
-    text-decoration: none;
-
-}
+    border-radius: 0;
+ }
 
 .print-actions {
   border-top: 1pt $brightpink solid;
 }
 
-.previous {
-  float: left;
-  background-color: transparent;
+
+.next a.list-group-item, .previous a.list-group-item {
+  padding: 10px;
 }
 
-a.list-group-item.previous {
-  border-top-right-radius: 0px;
-  padding-right: 36px;
-}
-
-a.list-group-item.next {
+.next a.list-group-item:hover {
+  color:blue;
   border-top-right-radius: 5px;
   border-bottom-right-radius:0px;
   border-bottom-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+
 }
 
-.next {
+.previous a.list-group-item:hover {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 5px;
+}
+
+
+.next-text, .next-icon {
   float: right;
   background-color: transparent;
 }
 
-a.list-group-item.next {
-  padding-left: 50px;
+.prev-icon {
+  float: left;
+  background-color: transparent;
+
 }
 
+.next-icon, .prev-icon {
+  font-size: 1.1em;
+  line-height: 20px;
+}
 
 .prev-next {
     overflow: auto;
     border-bottom: 1pt $brightpink solid;
+    padding: 0;
+    background-color: transparent;
 
 }
+
+
+/*
+@media only screen and (max-width: 1212px) {
+  .prev, .next {
+    text-align: center;
+    float: none;
+  }
+}
+
+@media only screen and (max-width: 464px) {
+  .prev, .next {
+    float: left;
+    
+  }
+}
+*/
 
 .skip {
   clear: both;
@@ -448,8 +480,7 @@ ol.sidebar-list {
   list-style-position: outside;
   font-size: 1.1em;
   font-family: $treb;
-  line-height: 2em;
-  padding: 0 10% 10px 65px;
+  padding: 0 5px 0 25px;
   margin: 0;
   color: #8a8282;
     a {
@@ -460,12 +491,18 @@ ol.sidebar-list {
       color: $orange;
       text-decoration: none;
     }
+    li {
+      line-height: 1.3em;
+      padding-bottom: 15px;
+    }
 }
 
 .list-group-item.skip {
   font-family: $treb;
   font-size: 14px;
 }
+
+
 
 /*takes away space that was revealing grey on unknown item behind panel group*/
 .panel-group {

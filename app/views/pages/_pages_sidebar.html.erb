@@ -1,48 +1,52 @@
-<div class="list-group page-actions">
-
-  <div class="prev-next">
-    <%= link_to '<span class="fa fa-arrow-left fa-fw"></span>&nbsp;Previous page'.html_safe, "#", class: "list-group-item previous" %>
-
-    <%= link_to 'Next page&nbsp;<span class="fa fa-arrow-right fa-fw"></span>'.html_safe, "#", class: "list-group-item next" %>
-  </div>
-
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-
-      <div class="panel-heading" role="tab" id="headingOne">
-        <div class="panel-title">
-
-          <a data-toggle="collapse" data-parent="#accordion" href="#page-list-collapse" aria-expanded="true" aria-controls="page-list-collapse">
-
-            <div class="list-group-item skip"><span class="fa fa-chevron-down fa-fw"></span>&nbsp;Skip to another page in this book:</div>
-          </a>
+<div class="container-fluid">
+ <div class="list-group page-actions">
+   <div class="row">
+    <div class="col-md-12">
+      <div class="prev-next">
+        <div class="previous">
+          <%= link_to '<span class="fa fa-chevron-left fa-fw prev-icon"></span><span class="previous-text">&nbsp;Previous</span>'.html_safe, "#", class: "list-group-item col-md-6" %>
+        </div><!-- end previous -->
+        <div class="next">
+          <%= link_to '<span class="fa fa-chevron-right fa-fw next-icon"></span><span class="next-text">Next&nbsp;</span>'.html_safe, "#", class: "list-group-item col-md-6" %>
+        </div><!-- end next-->
+      </div><!-- end prev-next -->
+    </div><!-- end md col 12--> 
+   </div><!-- end row -->
+  
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+  
+        <div class="panel-heading" role="tab" id="headingOne">
+          <div class="panel-title">
+  
+            <a data-toggle="collapse" data-parent="#accordion" href="#page-list-collapse" aria-expanded="true" aria-controls="page-list-collapse">
+  
+              <div class="list-group-item skip"><span class="fa fa-chevron-down"></span>&nbsp; Skip to another page in this book:</div>
+            </a>
+          </div>
+        </div> <!-- panel-heading -->
+  
+        <div id="page-list-collapse" class="panel-collapse collapse.in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+  
+            <ol class="sidebar-list">
+              <% @book.pages.each do |page| %>
+                <li><%= link_to page.title, book_page_path(@book, page) %></li>
+              <% end %>
+            </ol>
+          </div> <!-- panel-body -->
         </div>
-      </div> <!-- panel-heading -->
-
-      <div id="page-list-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-
-          <ol class="sidebar-list">
-            <% @book.pages.each do |page| %>
-              <li><%= link_to page.title, book_page_path(@book, page) %></li>
-            <% end %>
-          </ol>
-        </div> <!-- panel-body -->
       </div>
     </div>
-  </div>
-
-
-  <div class="print-actions">
-    <%= link_to '<span class="fa fa-file-text-o fa-fw"></span>&nbsp;Print my work on this page'.html_safe, "#", class: "list-group-item" %>
-    <%= link_to '<span class="fa fa-file-o fa-fw"></span>&nbsp;Print out a blank copy of this page'.html_safe, "#", class: "list-group-item" %>
-  </div><!-- end print actions -->
-
-
-
-
-</div>
-
+  
+  
+    <div class="print-actions">
+      <%= link_to '<span class="fa fa-file-text-o fa-fw"></span>&nbsp;Print my work on this page'.html_safe, "#", class: "list-group-item" %>
+      <%= link_to '<span class="fa fa-file-o fa-fw"></span>&nbsp;Print out a blank copy of this page'.html_safe, "#", class: "list-group-item" %>
+    </div><!-- end print actions -->
+  
+  </div> <!-- end list group page actions -->
+</div> <!-- end container fluid--
 
 
 
