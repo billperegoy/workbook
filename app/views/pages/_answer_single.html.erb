@@ -1,9 +1,11 @@
 <div class="question-action-buttons">
 
 <% if (question.answers.length > 0) %>
-  <p class="answer-text">
-    <%= question.answers[0].value %>
-  </p>
+  <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
+    <%= f.text_field :value, class: "form-control single-line-answer" %>
+    <%= f.submit "save" %>
+  <% end %>
+
 
 <div class="answer-control-buttons-group">
   <%= button_to "edit", edit_book_page_question_answer_path(book_id: book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-orange", method: :get, remote: true %>
