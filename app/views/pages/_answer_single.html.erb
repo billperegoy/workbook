@@ -1,8 +1,17 @@
 <% if (question.answers.length > 0) %>
-  <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
-    <%= f.text_field :value, class: "form-control single-line-answer" %>
-    <%= button_tag(type: "submit", "data-toggle" => "tooltip", "data-placement" => "top", "data-trigger" => "hover focus manual", title: "save", class: "save-button") do %>
-      <span class="fa fa-check-circle-o fa-2x" </span>
+  <% if question.format == 'essay' %>
+    <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
+      <%= f.text_area :value, class: "form-control multi-line-answer" %>
+      <%= button_tag(type: "submit", "data-toggle" => "tooltip", "data-placement" => "top", "data-trigger" => "hover focus manual", title: "save", class: "save-button") do %>
+        <span class="fa fa-check-circle-o fa-2x" </span>
+      <% end %>
+    <% end %>  
+  <% else %>
+    <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
+      <%= f.text_field :value, class: "form-control single-line-answer" %>
+      <%= button_tag(type: "submit", "data-toggle" => "tooltip", "data-placement" => "top", "data-trigger" => "hover focus manual", title: "save", class: "save-button") do %>
+        <span class="fa fa-check-circle-o fa-2x" </span>
+      <% end %>
     <% end %>  
   <% end %>
 <% end %>
