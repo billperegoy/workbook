@@ -16,7 +16,10 @@
       <% if question.answers.empty? %>
         <%= form_for question.answers.new, url: book_page_question_answers_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
           <%= f.text_area :value, class: "form-control multi-line-answer" %>
-          <%= f.submit "save"%>
+          <%= button_tag(type: "submit", "data-toggle" => "tooltip", "data-placement" => "top", "data-trigger" => "hover focus manual", title: "save", class: "save-button") do %>
+        <span class="fa fa-check-circle-o fa-2x" </span>
+      <% end %>
+
         <% end %>
       <% else %>
         <%= render partial: 'pages/answer_single', locals: {book: page.book, page: page, question: question} %>
@@ -26,7 +29,10 @@
       <% if question.answers.empty? %>
         <%= form_for question.answers.new, url: book_page_question_answers_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
           <%= f.text_field :value, class: "form-control single-line-answer" %>
-          <%= f.submit "save" %>
+          <%= button_tag(type: "submit", "data-toggle" => "tooltip", "data-placement" => "top", "data-trigger" => "hover focus manual", title: "save", class: "save-button") do %>
+        <span class="fa fa-check-circle-o fa-2x" </span>
+      <% end %>
+
         <% end %>
 
       <% else %>
