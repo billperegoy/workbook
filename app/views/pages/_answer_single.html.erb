@@ -1,15 +1,10 @@
-<div class="question-action-buttons">
-
 <% if (question.answers.length > 0) %>
   <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
     <%= f.text_field :value, class: "form-control single-line-answer" %>
-    <%= f.submit "save" %>
+    <%= button_tag(type: "submit", "data-toggle" => "tooltip", "data-placement" => "top", "data-trigger" => "hover focus manual", title: "save", class: "save-button") do %>
+      <span class="fa fa-check-circle-o fa-2x" </span>
+    <% end %>  
   <% end %>
-
-
-<div class="answer-control-buttons-group">
-  <%= button_to "edit", edit_book_page_question_answer_path(book_id: book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-orange", method: :get, remote: true %>
-
-  <%= button_to "clear", book_page_question_answer_path(page_id: page.id, question_id: question.id, id: question.answers[0].id), class: "answer-control-buttons bg-pink", method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-</div>
+
+
