@@ -5,12 +5,13 @@
     </li> 
 
     <% if (question.format == 'list') %>
+      <%= render partial: 'pages/answer_list', locals: {book: page.book, page: page, question: question} %>
+
       <%= form_for question.answers.new, url: book_page_question_answers_path(book_id: page.book.id, page_id: page.id, question_id: question.id) do |f| %>
         <%= f.text_field :value, class: "form-control list-answer" %>
         <%= render partial: 'list_icons' %>
         <%= f.submit "save" %>
       <% end %>
-      <%= render partial: 'pages/answer_list', locals: {book: page.book, page: page, question: question} %>
 
     <% elsif question.format == 'essay' %>
       <% if question.answers.empty? %>

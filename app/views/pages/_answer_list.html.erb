@@ -1,16 +1,13 @@
-<ul>
   <% question.answers.each do |answer| %>
-    <li><%= answer.value %></li>
-
-    <!-- FIXME This fails because of an empty answer in each question out of the box -->
-    <%#= form_for answer, url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: answer.id) do |f| %>
-      <%#= f.text_area :value, class: "form-control single-line-answer" %>
-      <%#= f.submit "save" %>
-    <%# end %>
+    <% if answer.id %>
+      <%= form_for answer, url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: answer.id) do |f| %>
+        <%= f.text_field :value, class: "form-control single-line-answer" %>
+        <%= f.submit "save" %>
+      <% end %>
+    <% end %>
+  <% end %>
 
 
     <!-- FIXME - commented out edit and delete -->
     <%#= button_to "edit", edit_book_page_question_answer_path(page_id: page.id, question_id: question.id, id: answer.id), remote: true, method: :get %>
     <%#=button_to 'delete', book_page_question_answer_path(page_id: page.id, question_id: question.id, id: answer.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-</ul>
