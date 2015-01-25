@@ -10,7 +10,7 @@
         <%= render partial: 'list_icons' %>
         <%= f.submit "save" %>
       <% end %>
-      <%= render partial: 'pages/answer_list', locals: {page: page, question: question} %>
+      <%= render partial: 'pages/answer_list', locals: {book: page.book, page: page, question: question} %>
 
     <% elsif question.format == 'essay' %>
       <% if question.answers.empty? %>

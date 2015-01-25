@@ -1,9 +1,18 @@
 <div class="question-action-buttons">
 
 <% if (question.answers.length > 0) %>
-  <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
-    <%= f.text_field :value, class: "form-control single-line-answer" %>
-    <%= f.submit "save" %>
+
+  <%= question.format %>
+  <% if question.format == 'essay' %>
+    <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
+      <%= f.text_area :value, class: "form-control multi-line-answer" %>
+      <%= f.submit "save" %>
+    <% end %>
+  <% else %>
+    <%= form_for question.answers[0], url: book_page_question_answer_path(book_id: page.book.id, page_id: page.id, question_id: question.id, id: question.answers[0].id) do |f| %>
+      <%= f.text_field :value, class: "form-control single-line-answer" %>
+      <%= f.submit "save" %>
+    <% end %>
   <% end %>
 
 
