@@ -10,7 +10,7 @@
   
   <div class="col-md-7 product-long-description">
     <h1 class="description-page"><%= @book.title %></h1>
-    <p><%= @book.description %></p>
+    <p><%= @book.description.html_safe %></p>
     
     <% if logged_in? %>
       <%= link_to "buy me", add_to_cart_path(@book), class: "btn btn-default", type: "button" %>

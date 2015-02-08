@@ -29,12 +29,12 @@
   </h1>
 
   <div class="exercise-description-truncated">
-    <p class="exercise-description"><%= truncate(@page.description, length: 300, separator: " ") %>
+    <p class="exercise-description"><%= truncate(@page.description, length: 300, separator: " ", escape: false) %>
     <span class="read-more">read more</span></p>
   </div>
 
   <div class="exercise-description-full">
-    <p class="exercise-description"><%= @page.description %>
+    <p class="exercise-description"><%= raw @page.description %>
     <span class="read-less">read less</span></p>
   </div>
 
