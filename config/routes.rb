@@ -23,6 +23,7 @@ Workbook::Application.routes.draw do
 
   get '/static_pages/about' => 'static_pages#about', as: 'about'
   get '/static_pages/contact' => 'static_pages#contact', as: 'contact'
+  get '/static_pages/resources' => 'static_pages#resources', as: 'resources'
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
